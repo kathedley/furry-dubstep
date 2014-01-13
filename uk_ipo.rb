@@ -2,17 +2,14 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'nokogiri'
-require 'rest-open-uri'
+require 'open-uri'
 require 'sinatra'
 
-get '/uk/publication_number/:pub_number' do
-    # params[:pub_number] is the parameter
 
-#puts "Enter the UK publication number - use EP2120000 (granted), GB2394569 (granted) or GB2234567 (terminated before grant)"
-#pub_number = gets
+puts "Enter the UK publication number - use EP2120000 (granted), GB2394569 (granted) or GB2234567 (terminated before grant)"
+pub_number = gets
 
-patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/PublicationNumber/" + params[:pub_number]
-
+patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/PublicationNumber/" + pub_number
 patent_page = Nokogiri::HTML(open(patent_page_url))
 
 # need to handle 404 error (and others)
