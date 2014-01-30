@@ -103,7 +103,7 @@ get '/:country/:lookuptype/:number' do
 
         
         xml = Builder::XmlMarkup.new(:indent=>2)
-        xml.patent { |p| p.application_number (application_number); p.publication_number (publication_number);p.status(status); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year) }
+        xml.patent { |p| p.application_number (application_number); p.publication_number (publication_number); p.filing_date{filing_date}; p.applicant{applicant}; p.status(status); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year) }
     end
 
 end
