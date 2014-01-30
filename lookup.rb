@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+
 require 'nokogiri'
 require 'sinatra'
 require 'open-uri'
@@ -58,11 +59,15 @@ get '/:country/:lookuptype/:number' do
 
     if params[:country] = "uk"
 
-        if params[:lookuptype] = "application"
+        if
+            params[:lookuptype] == "application"
             patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/ApplicationNumber/" + params[:number]
-        else
+            elsif
+            params[:lookuptype] == "publication"
             #params[:type] must equal  - not dealing with any other scenario - input from zoho must be application or publication
             patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/PublicationNumber/" + params[:number]
+        else
+            patent_page_url = ""
         end
 
         patent_page = Nokogiri::HTML(open(patent_page_url))
@@ -84,7 +89,6 @@ get '/:country/:lookuptype/:number' do
 
         if status == 'Granted'
             last_renewal_date = patent_page.xpath("//td[contains(text(), 'Last Renewal Date')]/following-sibling::*")[0].content
-            last_renewal_date.split(' ')
             next_renewal_date = patent_page.xpath("//td[contains(text(), 'Next Renewal Date')]/following-sibling::*")[0].content
             last_renewal_year = patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]/following-sibling::*")[0].content.to_i
         else
@@ -93,12 +97,13 @@ get '/:country/:lookuptype/:number' do
             last_renewal_year = 0
         end
 
-
+            #fee = [ 0,0,0,0, 70.00, 90.00, 110.00, 130.00, 150.00, 170.00, 190.00, 210.00, 250.00, 290.00, 350.00, 410.00 ,460.00, 510.00, 560.00, 600.00]
+            
 ### not yet looked up license of right ###
 
         
         xml = Builder::XmlMarkup.new(:indent=>2)
-        xml.patent { |p| p.status(status); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year) }
+        xml.patent { |p| p.application_number (application_number); p.publication_number (publication_number);p.status(status); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year) }
     end
 
 end
