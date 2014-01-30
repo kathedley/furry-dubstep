@@ -1,4 +1,3 @@
-
 source "https://rubygems.org"
 ruby "2.0.0"
 gem "rubygems-update", "~> 2.2.1"
@@ -11,3 +10,4 @@ gem "rack-protection", "~> 1.5.1"
 gem "mini_portile", "~> 0.5.2"
 gem "bundler", "~> 1.5.2"
 gem "libxml-ruby", "~> 2.7.0"
+gem "gocardless", "~> 1.8.0"
