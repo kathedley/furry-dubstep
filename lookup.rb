@@ -100,6 +100,7 @@ get '/:country/:lookuptype/:number' do #do3
                 
                 # Possible error messages:
                     # Please enter a valid publication number.
+                    # Please enter a valid applcation number.
                     # European patent not yet granted. Check the EPO Register
                     # A case was not found matching this number.
                     # Please enter a valid publication number.
@@ -138,7 +139,7 @@ get '/:country/:lookuptype/:number' do #do3
                     next_renewal_date = patent_page.xpath("//td[contains(text(), 'Next Renewal Date')]/following-sibling::*")[0].content
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]")[0] != nil
-                    publication_number = patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]/following-sibling::*")[0].content.to_i
+                    last_renewal_year = patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]/following-sibling::*")[0].content.to_i
                 end
                
                 #Some patents have PCT application and publication number - currently ignoring this e.g. GB2348905
