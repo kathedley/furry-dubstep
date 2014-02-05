@@ -7,6 +7,10 @@ require 'builder'
 require 'gocardless'
 require 'net/http'
 
+configure :production do
+    require 'newrelic_rpm'
+end
+
 ##################################   GO CARDLESS   ##################################
 
 # Initialising GoCardless client
@@ -152,7 +156,7 @@ get '/:country/:lookuptype/:number' do #do3
                     # Ceased                        # Still has last renewal date, next renewal date, last renewal year, also has not in force date e.g. PN GB2348901
                     # Pending                       # Does not have any renewal-related fields e.g. PN GB2500000
                                                     # May not even be published - no Publication Number field and has LODGED DATE not FILING DATE e.g. *AN* GB1215684
-                    # Terminated before grant       # Has a not in force date e.g. PN GB2400000
+                    # Terminated before grant       # Has a Not in Force date e.g. PN GB2400000
                     # Awaiting First Examination    # No renewal fields as not yet granted e.g. PN GB2470002
                     # Expired                       # Over 20 years old e.g. PN EP0665079
                     # Void-no translation filed     # Not in force date e.g. PN EP0665084
