@@ -22,6 +22,9 @@ GoCardless.account_details = {
     :merchant_id => '0HECHG47YP',
 }
 
+get '/' do
+end
+
 get '/:email/subscribe' do #do1
     
     # We'll be billing everyone £10 per month
