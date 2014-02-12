@@ -6,10 +6,57 @@ require 'open-uri'
 require 'builder'
 require 'gocardless'
 require 'net/http'
+require 'mandrill'
 
 configure :production do
     require 'newrelic_rpm'
 end
+
+
+get '/' do
+end
+
+
+####################################   MANDRILL   ####################################
+### ###
+get '/mandrill/:template/:email/:fullname/:content1/' do #mandrill1
+    
+    begin #mandrill2
+        mandrill = Mandrill::API.new '9zTx2aQt9MAI90zqo6AyNg' # this is a test API key
+        template_name = params[:template]
+        template_content = [{"std_content01"=>params[:content1]}]
+        message = {"to"=>
+            [{"type"=>"to",
+                "email"=>params[:email],
+                "name"=>params[:fullname]}],
+            "track_opens"=>true,
+            "important"=>false,
+            "track_clicks"=>true,
+            "auto_text"=>true,
+            "inline_css"=>true,
+            #"url_strip_qs"=>nil, #strips parameters from urls, so tracked clicks aggregate
+            "bcc_address"=>"outbound@renewalsdesk.com",
+            "google_analytics_domains"=>["renewalsdesk.com"],
+            "google_analytics_campaign"=>[params[:template]],
+            "tags"=>["non-ar-renewal-reminder"]}
+            #"auto_html"=>nil}
+        async = false
+        result = mandrill.messages.send_template template_name, template_content, message, async, ip_pool, send_at
+        # [{"_id"=>"abc123abc123abc123abc123abc123",
+        #     "status"=>"sent",
+        #     "reject_reason"=>"hard-bounce",
+        #     "email"=>"recipient.email@example.com"}]
+        
+        rescue Mandrill::Error => e
+        # Mandrill errors are thrown as exceptions
+        puts "A mandrill error occurred: #{e.class} - #{e.message}"
+        # A mandrill error occurred: Mandrill::UnknownSubaccountError - No subaccount exists with the id 'customer-123'    
+        raise
+    end #ends begin mandrill2
+    
+end #ends do mandrill1
+
+
 
 ##################################   GO CARDLESS   ##################################
 
@@ -22,10 +69,8 @@ GoCardless.account_details = {
     :merchant_id => '0HECHG47YP',
 }
 
-get '/' do
-end
 
-get '/:email/subscribe' do #do1
+get '/gc/:email/subscribe' do #do1
     
     # We'll be billing everyone £10 per month
     # for a premium subscription
@@ -54,7 +99,7 @@ get '/confirm' do #do2
     end #ends begin1
 end #ends do2
 
-get '/:country/:lookuptype/:number' do #do3
+get '/lookup/:country/:lookuptype/:number' do #do3
     
     # the variables are params[:country], params[:lookuptype] and params[:number]
     
@@ -81,7 +126,7 @@ get '/:country/:lookuptype/:number' do #do3
         if #if2
             params[:lookuptype] == "application"
             patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/ApplicationNumber/" + params[:number]
-            elsif
+        elsif
             params[:lookuptype] == "publication"
             patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/PublicationNumber/" + params[:number]
         else
@@ -148,6 +193,9 @@ get '/:country/:lookuptype/:number' do #do3
                 if  patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]")[0] != nil
                     last_renewal_year = patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]/following-sibling::*")[0].content.to_i
                 end
+                if  patent_page.xpath("//td[contains(text(), 'Grant Date')]")[0] != nil
+                    grant_date = patent_page.xpath("//td[contains(text(), 'Grant Date')]/following-sibling::*")[0].content.match(/\d{2}+\s+\w+\s+\d{4}/).to_s #finding dates by format #returns first date as string
+                end
                
                 #Some patents have PCT application and publication number - currently ignoring this e.g. GB2348905
 
@@ -171,7 +219,7 @@ get '/:country/:lookuptype/:number' do #do3
       
     # Build XML
     xml = Builder::XmlMarkup.new(:indent=>2)
-    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.filing_date(filing_date); p.status(status); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
+    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
                 #   Applicant not yet in XML as don't yet know how to deal with the multi-line response that arrives
 
     end #ends if1
