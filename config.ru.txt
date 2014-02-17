@@ -1,5 +1,5 @@
 require 'rubygems' 
 require 'bundler'  
 Bundler.require  
-require './main'
+require './lookup'
 run Sinatra::Application
