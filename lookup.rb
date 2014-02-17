@@ -6,7 +6,6 @@ require 'open-uri'
 require 'builder'
 require 'gocardless'
 require 'net/http'
-require 'mandrill'
 
 configure :production do
     require 'newrelic_rpm'
@@ -17,7 +16,7 @@ get '/' do
 end
 
 
-get '/lookup/:country/:lookuptype/:number' do #do3
+get '/lookup/:country/:lookuptype/:number' do #allPOlookup
     
     # the variables are params[:country], params[:lookuptype] and params[:number]
     
@@ -39,9 +38,9 @@ get '/lookup/:country/:lookuptype/:number' do #do3
 ### not yet looked up license of right ###
 
 
-    if params[:country] = "uk" #if1
+    if params[:country] = "uk" #UKif1
 
-        if #if2
+        if #UKif2
             params[:lookuptype] == "application"
             patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/ApplicationNumber/" + params[:number]
         elsif
@@ -49,7 +48,7 @@ get '/lookup/:country/:lookuptype/:number' do #do3
             patent_page_url = "http://www.ipo.gov.uk/p-ipsum/Case/PublicationNumber/" + params[:number]
         else
             patent_page_url = ""
-        end #ends if2
+        end #ends UKif2
 
         # First, check if it's a valid page
         
@@ -61,7 +60,7 @@ get '/lookup/:country/:lookuptype/:number' do #do3
             patent_page = Nokogiri::HTML(open(patent_page_url))
 
             # Next, check there's a patent found at that address
-            if  #if4
+            if  #UKif4
                 patent_page.css("//p[@id='AsyncErrorMessage']")[0].content != ""
                 
                 puts "Error message exists"
@@ -77,7 +76,7 @@ get '/lookup/:country/:lookuptype/:number' do #do3
                     # The patent case type must be UK or EP(UK). e.g. PN EP0665096
                     # No data is held electronically for this case. e.g. PN GB1215686
             
-            else #related to if4
+            else #related to UKif4
                 # No error message, continue to look for data
 
                 # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
@@ -131,14 +130,50 @@ get '/lookup/:country/:lookuptype/:number' do #do3
                     # Void-no translation filed     # Not in force date e.g. PN EP0665084
                     # Application Published
 
-            end #ends if4
+            end #ends UKif4
         
-        end #ends if3
+        end #ends UKif3
       
     # Build XML
     xml = Builder::XmlMarkup.new(:indent=>2)
     xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
                 #   Applicant not yet in XML as don't yet know how to deal with the multi-line response that arrives
 
-    end #ends if1
-end #ends do3
+    end #ends UKif1
+end #ends allPOlookup
+
+
+
+
+####################################   MANDRILL   ####################################
+### ###
+get '/mandrill/:template/:email/:fullname/:content1' do #mandrill1
+
+require 'httparty'
+require 'mandrill'
+
+    url = 'https://mandrillapp.com/api/1.0//messages/send-template.xml'
+    
+    response = HTTParty.post url, :body => {
+        "key"=>'9zTx2aQt9MAI90zqo6AyNg',
+        "template_name" => params[:template],
+        "template_content"=>[{"name"=>"std_content01", "content"=>"examplecontent"}],        "message" => {"to"=>
+            [{"type"=>"to",
+                "email"=>params[:email],
+                "name"=>params[:fullname]}],
+            "track_opens"=>true,
+            "important"=>false,
+            "track_clicks"=>true,
+            "auto_text"=>true,
+            "inline_css"=>true,
+            "url_strip_qs"=>true,
+            "bcc_address"=>"outbound@renewalsdesk.com",
+            "google_analytics_domains"=>["renewalsdesk.com"],
+            "google_analytics_campaign"=>[params[:template]],
+            "tags"=>["non-ar-renewal-reminder"]},
+        "result" => "mandrill.messages.send_template template_name, template_content, message"
+    }
+    
+    response.body
+    
+end #ends mandrill1
