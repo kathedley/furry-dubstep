@@ -152,7 +152,7 @@ get '/mandrill/:template/:email/:fullname/:content1' do #mandrill1
 require 'httparty'
 require 'mandrill'
 
-    url = 'https://mandrillapp.com/api/1.0//messages/send-template.xml'
+    url = 'https://mandrillapp.com/api/1.0/messages/send-template.json'
     
     response = HTTParty.post url, :body => {
         "key"=>'9zTx2aQt9MAI90zqo6AyNg',
