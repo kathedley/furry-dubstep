@@ -1,11 +1,14 @@
 require 'rubygems'
 require 'bundler/setup'
-require 'nokogiri'
+require 'nokogiri' #for accessing web page contents
 require 'sinatra'
-require 'open-uri'
-require 'builder'
-require 'gocardless'
+require 'open-uri' #for opening urls
+require 'builder' #for building xmls
+require 'gocardless' #for gocardless API
 require 'net/http'
+require 'httparty' #for post requests
+require 'mandrill' #not used as using httparty for post requests to mandrill instead
+require 'uri' #for escaping URLs
 
 configure :production do
     require 'newrelic_rpm'
@@ -31,6 +34,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
     next_renewal_date = ""
     last_renewal_year = ""
     error_message = ""
+    grant_date = ""
 
 
 #######################################   UK   #######################################
@@ -146,34 +150,73 @@ end #ends allPOlookup
 
 
 ####################################   MANDRILL   ####################################
-### ###
+
 get '/mandrill/:template/:email/:fullname/:content1' do #mandrill1
+    #This page sends a request to the /post page and displays the result that pages gives in a Zoho-readable XML
+    
+    #Setting up initial values
+    mandrill_http_status_code = ""
+    email_address = ""
+    email_status = ""
+    mandrill_email_id = ""
+    
+    #Escaping parameters, as they seem to turn back to standard strings when used as 'params[]'
+    email_to_url = URI.escape(params[:email])
+    fullname_to_url = URI.escape(params[:fullname])
+    content1_to_url = URI.escape(params[:content1])
+    
+    mandrill_response_xml = Nokogiri::HTML(open('http://localhost:4567/mandrill/'+params[:template]+'/'+email_to_url+'/'+fullname_to_url+'/'+content1_to_url+'/post'))
 
-require 'httparty'
-require 'mandrill'
 
-    url = 'https://mandrillapp.com/api/1.0/messages/send-template.json'
+    mandrill_http_status_code = mandrill_response_xml.xpath("//code")[0].content
     
-    response = HTTParty.post url, :body => {
-        "key"=>'9zTx2aQt9MAI90zqo6AyNg',
-        "template_name" => params[:template],
-        "template_content"=>[{"name"=>"std_content01", "content"=>"examplecontent"}],        "message" => {"to"=>
-            [{"type"=>"to",
-                "email"=>params[:email],
-                "name"=>params[:fullname]}],
-            "track_opens"=>true,
-            "important"=>false,
-            "track_clicks"=>true,
-            "auto_text"=>true,
-            "inline_css"=>true,
-            "url_strip_qs"=>true,
-            "bcc_address"=>"outbound@renewalsdesk.com",
-            "google_analytics_domains"=>["renewalsdesk.com"],
-            "google_analytics_campaign"=>[params[:template]],
-            "tags"=>["non-ar-renewal-reminder"]},
-        "result" => "mandrill.messages.send_template template_name, template_content, message"
-    }
+    if mandrill_http_status_code.match(/20\d/)
+        email_address = mandrill_response_xml.xpath("//email")[1].content
+        email_status =  mandrill_response_xml.xpath("//status")[1].content
+        mandrill_email_id = mandrill_response_xml.xpath("//_id")[1].content
+    end
     
-    response.body
-    
+    #Build XML
+    xml = Builder::XmlMarkup.new(:indent=>2)
+    xml.result { |p| p.mandrill_http_status_code(mandrill_http_status_code); p.email_address(email_address); p.email_status(email_status); p.mandrill_email_id(mandrill_email_id) }
+
+
 end #ends mandrill1
+
+
+get '/mandrill/:template/:email/:fullname/:content1/post' do #mandrill2
+    #This page actually does the post request
+            
+    url = 'https://mandrillapp.com/api/1.0/messages/send-template.xml'
+    
+    response = HTTParty.post url, :body => {"key"=>'9zTx2aQt9MAI90zqo6AyNg', # 9zTx2aQt9MAI90zqo6AyNg is a test API key
+                             "template_name" => params[:template],
+                             "template_content"=>
+                                [{"name"=>"std_content01",
+                                "content"=>params[:content1]}],
+                            "message" =>
+                                {"to"=>[{"type"=>"to",
+                                        "email"=>params[:email],
+                                        "name"=>params[:fullname]}],
+                                "track_opens"=>true,
+                                "important"=>false,
+                                "track_clicks"=>true,
+                                "auto_text"=>true,
+                                "inline_css"=>true,
+                                "url_strip_qs"=>true,
+                                "bcc_address"=>"outbound@renewalsdesk.com",
+                                "google_analytics_domains"=>["renewalsdesk.com"],
+                                "google_analytics_campaign"=>[params[:template]],
+                                "tags"=>["non-ar-renewal-reminder"]}, #close message
+                            "result" => "mandrill.messages.send_template template_name, template_content, message"}
+    
+    #, #close :body
+    # :headers => {"Content-Type" => "application/xml"} #close post
+    
+    puts response
+
+    response.body + "<code>" + response.code.to_s + "</code>"
+    
+
+    
+end #ends mandrill2
