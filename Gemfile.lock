@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/kathedley/httparty
-  revision: b6df47d36ac6736bbe73b537a3a7cf2071313535
+  revision: a884b4b89b970ec09568c55784c3630fb9b33a39
   specs:
-    httparty (0.13.0.handlearrayhash.1)
+    httparty (0.13.0.handlearrayhash.1.2)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
 
