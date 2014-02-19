@@ -165,7 +165,7 @@ get '/mandrill/:template/:email/:fullname/:content1' do #mandrill1
     fullname_to_url = URI.escape(params[:fullname])
     content1_to_url = URI.escape(params[:content1])
     
-    mandrill_response_xml = Nokogiri::HTML(open('http://localhost:4567/mandrill/'+params[:template]+'/'+email_to_url+'/'+fullname_to_url+'/'+content1_to_url+'/post'))
+    mandrill_response_xml = Nokogiri::HTML(open('http://compute.renewalsdesk.com/mandrill/'+params[:template]+'/'+email_to_url+'/'+fullname_to_url+'/'+content1_to_url+'/post'))
 
 
     mandrill_http_status_code = mandrill_response_xml.xpath("//code")[0].content
@@ -186,7 +186,7 @@ end #ends mandrill1
 
 get '/mandrill/:template/:email/:fullname/:content1/post' do #mandrill2
     #This page actually does the post request
-            
+    
     url = 'https://mandrillapp.com/api/1.0/messages/send-template.xml'
     
     response = HTTParty.post url, :body => {"key"=>'9zTx2aQt9MAI90zqo6AyNg', # 9zTx2aQt9MAI90zqo6AyNg is a test API key
