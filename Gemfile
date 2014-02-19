@@ -13,4 +13,4 @@ gem "libxml-ruby", "~> 2.7.0"
 gem "gocardless", "~> 1.8.0"
 gem "newrelic_rpm", "~> 3.7.2.192"
 gem "mandrill-api", "~> 1.0.51"
-gem "httparty", "~> 0.13.0"
+gem 'httparty', :git => 'git://github.com/kathedley/httparty'

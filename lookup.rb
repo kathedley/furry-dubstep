@@ -165,15 +165,15 @@ get '/mandrill/:template/:email/:fullname/:content1' do #mandrill1
     fullname_to_url = URI.escape(params[:fullname])
     content1_to_url = URI.escape(params[:content1])
     
-    mandrill_response_xml = Nokogiri::HTML(open('http://compute.renewalsdesk.com/mandrill/'+params[:template]+'/'+email_to_url+'/'+fullname_to_url+'/'+content1_to_url+'/post'))
+    mandrill_response_xml = Nokogiri::HTML(open('http://localhost:4567/mandrill/'+params[:template]+'/'+email_to_url+'/'+fullname_to_url+'/'+content1_to_url+'/post'))
 
 
     mandrill_http_status_code = mandrill_response_xml.xpath("//code")[0].content
     
     if mandrill_http_status_code.match(/20\d/)
-        email_address = mandrill_response_xml.xpath("//email")[1].content
-        email_status =  mandrill_response_xml.xpath("//status")[1].content
-        mandrill_email_id = mandrill_response_xml.xpath("//_id")[1].content
+        email_address = mandrill_response_xml.xpath("//email")[0].content
+        email_status =  mandrill_response_xml.xpath("//status")[0].content
+        mandrill_email_id = mandrill_response_xml.xpath("//_id")[0].content
     end
     
     #Build XML
