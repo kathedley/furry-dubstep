@@ -220,3 +220,96 @@ get '/mandrill/:template/:email/:fullname/:content1/post' do #mandrill2
 
     
 end #ends mandrill2
+
+##################################   GO CARDLESS   ##################################
+
+# Initialising GoCardless client
+GoCardless.environment = :sandbox
+GoCardless.account_details = {
+    :app_id => '92JE8HYRG8NPC1ZJXMSBQ59BD2S0D0R6TGXSD5ZM971AFWMJZ1C7DSAPHXN1PABQ',
+    :app_secret => 'AYTVNMFAV89Y8QWJT7CQGA4Q62WT7TC7G9QMGXVTAS34WRKMY48JM82HHP183XJC',
+    :token => 'AYSHQRK99Y40G33QA2A1BVEY7ET90FK4675R8GGZ3B794SEXNWKSK2VMWFK24ZST',
+    :merchant_id => '0HECHG47YP',
+}
+
+### Set up pre-auth ###
+
+get '/gc/preauth/:max_amount/:first_name/:last_name/:email/:company/:add1/:add2/:town/:postcode/:country/:state' do #preauth do1
+    
+    if params[:country] = "United Kingdom"
+        country_code = "GB"
+    else
+        country_code = ""
+    end
+    
+    url_params = {
+        :max_amount => params[:max_amount], #required
+        :interval_length => 1, #required
+        :interval_unit => "day", #required
+        :name => "Auto-Renewal Authorisation",
+        :redirect_uri => "https://compute.renewalsdesk.com/gc/confirm/preauth",
+        :state => params[:state],
+        :user => {
+            :first_name       => params[:first_name],
+            :last_name        => params[:last_name],
+            :email            => params[:email],
+            :company_name     => params[:company],
+            :billing_address1 => params[:add1],
+            :billing_address2 => params[:add2],
+            :billing_town     => params[:town],
+            :billing_postcode => params[:postcode],
+            :country_code     => country_code
+            
+        }
+    }
+    
+    url = GoCardless.new_pre_authorization_url(url_params)
+    redirect url
+    print url
+end #ends preauth do1
+
+get '/gc/confirm/preauth?state=:state' do #do2
+    begin GoCardless.confirm_resource(params) #begin1
+        "New authorisation created! Redirecting back to RenewalsDesk..."
+        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Success?PreID="+params[:state]
+        redirect url
+        rescue GoCardless::ApiError => e
+        @error = e
+        "Could not confirm new subscription. Details: #{e}. Redirecting back to RenewalsDesk..."
+        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Failure?PreID="+params[:state]
+        redirect url
+    end #ends begin1
+end #ends do2
+
+
+
+### Below is an example - not in use ###
+get '/gc/:email/subscribe10' do #do1
+    
+    # We'll be billing everyone £10 per month
+    # for a premium subscription
+    url_params = {
+        :amount => 10,
+        :interval_unit => "month",
+        :interval_length => 2,
+        :name => "Premium Subscription",
+        # Set the user email from the submitted value
+        :user => {
+            :email => params[:email]
+        }
+    }
+    
+    url = GoCardless.new_subscription_url(url_params)
+    redirect url
+    print url
+end #ends do1
+
+get '/confirm' do #do2
+    begin GoCardless.confirm_resource(params) #begin1
+        "New subscription created!"
+        rescue GoCardless::ApiError => e
+        @error = e
+        "Could not confirm new subscription. Details: #{e}"
+    end #ends begin1
+end #ends do2
+
