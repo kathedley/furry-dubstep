@@ -246,7 +246,7 @@ get '/gc/preauth/:max_amount/:first_name/:last_name/:email/:company/:add1/:add2/
         :max_amount => params[:max_amount], #required
         :interval_length => 1, #required
         :interval_unit => "day", #required
-        :name => "Auto-Renewal Authorisation",
+        :name => "Authorised Automatic Renewals",
         :redirect_uri => "https://compute.renewalsdesk.com/gc/confirm/preauth",
         :state => params[:state],
         :user => {
@@ -268,15 +268,15 @@ get '/gc/preauth/:max_amount/:first_name/:last_name/:email/:company/:add1/:add2/
     print url
 end #ends preauth do1
 
-get '/gc/confirm/preauth?state=:state' do #do2
+get '/gc/confirm/preauth' do #do2
     begin GoCardless.confirm_resource(params) #begin1
         "New authorisation created! Redirecting back to RenewalsDesk..."
-        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Success?PreID="+params[:state]
+        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Success?PreID="+params[:state]+"&AuthID="+params[:resource_id]
         redirect url
         rescue GoCardless::ApiError => e
         @error = e
         "Could not confirm new subscription. Details: #{e}. Redirecting back to RenewalsDesk..."
-        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Failure?PreID="+params[:state]
+        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Failure?PreID="+params[:state]+"&AuthID="+params[:resource_id]
         redirect url
     end #ends begin1
 end #ends do2
