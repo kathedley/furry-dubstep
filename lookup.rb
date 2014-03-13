@@ -165,7 +165,7 @@ get '/mandrill/:template/:email/:fullname/:content1' do #mandrill1
     fullname_to_url = URI.escape(params[:fullname])
     content1_to_url = URI.escape(params[:content1])
     
-    mandrill_response_xml = Nokogiri::HTML(open('http://compute.renewalsdesk.com/mandrill/'+params[:template]+'/'+email_to_url+'/'+fullname_to_url+'/'+content1_to_url+'/post'))
+    mandrill_response_xml = Nokogiri::HTML(open('https://renewalsdesk.herokuapp.com/mandrill/'+params[:template]+'/'+email_to_url+'/'+fullname_to_url+'/'+content1_to_url+'/post'))
 
 
     mandrill_http_status_code = mandrill_response_xml.xpath("//code")[0].content
@@ -247,7 +247,7 @@ get '/gc/preauth/:max_amount/:first_name/:last_name/:email/:company/:add1/:add2/
         :interval_length => 1, #required
         :interval_unit => "day", #required
         :name => "Authorised Automatic Renewals",
-        :redirect_uri => "https://compute.renewalsdesk.com/gc/confirm/preauth",
+        :redirect_uri => "https://renewalsdesk.herokuapp.com/gc/confirm/preauth",
         :state => params[:state],
         :user => {
             :first_name       => params[:first_name],
@@ -276,7 +276,56 @@ get '/gc/confirm/preauth' do #do2
         rescue GoCardless::ApiError => e
         @error = e
         "Could not confirm new subscription. Details: #{e}. Redirecting back to RenewalsDesk..."
-        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Failure?PreID="+params[:state]+"&AuthID="+params[:resource_id]
+        url = "https://service.renewalsdesk.com/#View:Pre_Authorisation_Failure?PreID="+params[:state]
+        redirect url
+    end #ends begin1
+end #ends do2
+
+
+
+### Set up one-off bill ###
+
+get '/gc/oneoffbill/:amount/:first_name/:last_name/:email/:company/:add1/:add2/:town/:postcode/:country/:state' do #oneoffbill do1
+    
+    if params[:country] = "United Kingdom"
+        country_code = "GB"
+        else
+        country_code = ""
+    end
+    
+    url_params = {
+        :amount => params[:amount], #required
+        :name => "One-Off Direct Debit Payment for Patent Renewal",
+        :redirect_uri => "https://renewalsdesk.herokuapp.com/gc/confirm/oneoffbill",
+        :state => params[:state],
+        :user => {
+            :first_name       => params[:first_name],
+            :last_name        => params[:last_name],
+            :email            => params[:email],
+            :company_name     => params[:company],
+            :billing_address1 => params[:add1],
+            :billing_address2 => params[:add2],
+            :billing_town     => params[:town],
+            :billing_postcode => params[:postcode],
+            :country_code     => country_code
+            
+        }
+    }
+    
+    url = GoCardless.new_bill_url(url_params)
+    redirect url
+    print url
+end #ends oneoffbill do1
+
+get '/gc/confirm/oneoffbill' do #do2
+    begin GoCardless.confirm_resource(params) #begin1
+        "New authorisation created! Redirecting back to RenewalsDesk..."
+        url = "https://service.renewalsdesk.com/#View:Payment_DD_Success?PayID="+params[:state]+"&GCID="+params[:resource_id]
+        redirect url
+        rescue GoCardless::ApiError => e
+        @error = e
+        "Could not confirm new subscription. Details: #{e}. Redirecting back to RenewalsDesk..."
+        url = "https://service.renewalsdesk.com/#View:Payment_DD_Failure?PayID="+params[:state]
         redirect url
     end #ends begin1
 end #ends do2
