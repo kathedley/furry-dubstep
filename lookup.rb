@@ -285,7 +285,8 @@ end #ends do2
 
 ### Set up one-off bill ###
 
-get '/gc/oneoffbill/:amount/:first_name/:last_name/:email/:company/:add1/:add2/:town/:postcode/:country/:state' do #oneoffbill do1
+get '/gc/oneoffbill/:amount/:first_name/:last_name/:email/:company/:add1/:add2/:town/:postcode/:country/:state/:orderID' do #oneoffbill do1
+    #state is zoho payment ID
     
     if params[:country] = "United Kingdom"
         country_code = "GB"
@@ -295,7 +296,7 @@ get '/gc/oneoffbill/:amount/:first_name/:last_name/:email/:company/:add1/:add2/:
     
     url_params = {
         :amount => params[:amount], #required
-        :name => "One-Off Direct Debit Payment for Patent Renewal",
+        :name => "Order "+ params[:orderID],
         :redirect_uri => "https://renewalsdesk.herokuapp.com/gc/confirm/oneoffbill",
         :state => params[:state],
         :user => {
