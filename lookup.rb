@@ -333,33 +333,51 @@ end #ends do2
 
 
 
-### Below is an example - not in use ###
-get '/gc/:email/subscribe10' do #do1
+### Set up pre-auth bill ###
+
+get '/gc/preauthbill/:amount/:first_name/:last_name/:email/:company/:add1/:add2/:town/:postcode/:country/:state/:orderID/:preauthID' do #preauthbill do1
+    #state is zoho payment ID
     
-    # We'll be billing everyone £10 per month
-    # for a premium subscription
+    if params[:country] = "United Kingdom"
+        country_code = "GB"
+        else
+        country_code = ""
+    end
+    
     url_params = {
-        :amount => 10,
-        :interval_unit => "month",
-        :interval_length => 2,
-        :name => "Premium Subscription",
-        # Set the user email from the submitted value
+        :amount => params[:amount], #required
+        :pre_authorization_id => params[:preauthID],
+        :name => "Order "+ params[:orderID],
+        :redirect_uri => "https://renewalsdesk.herokuapp.com/gc/confirm/preauthbill",
+        :state => params[:state],
         :user => {
-            :email => params[:email]
+            :first_name       => params[:first_name],
+            :last_name        => params[:last_name],
+            :email            => params[:email],
+            :company_name     => params[:company],
+            :billing_address1 => params[:add1],
+            :billing_address2 => params[:add2],
+            :billing_town     => params[:town],
+            :billing_postcode => params[:postcode],
+            :country_code     => country_code
+            
         }
     }
     
-    url = GoCardless.new_subscription_url(url_params)
+    url = GoCardless.new_bill_url(url_params)
     redirect url
     print url
-end #ends do1
+end #ends preauthbill do1
 
-get '/confirm' do #do2
+get '/gc/confirm/preauthbill' do #do2
     begin GoCardless.confirm_resource(params) #begin1
-        "New subscription created!"
+        "New authorisation created! Redirecting back to RenewalsDesk..."
+        url = "https://service.renewalsdesk.com/#View:Payment_DD_Success?PayID="+params[:state]+"&GCID="+params[:resource_id]
+        redirect url
         rescue GoCardless::ApiError => e
         @error = e
-        "Could not confirm new subscription. Details: #{e}"
+        "Could not confirm new subscription. Details: #{e}. Redirecting back to RenewalsDesk..."
+        url = "https://service.renewalsdesk.com/#View:Payment_DD_Failure?PayID="+params[:state]
+        redirect url
     end #ends begin1
 end #ends do2
-
