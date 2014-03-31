@@ -94,7 +94,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
                     filing_date = patent_page.xpath("//td[contains(text(), 'Filing Date')]/following-sibling::*")[0].content
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Lodged Date')]")[0] != nil
-                    filing_date = patent_page.xpath("//td[contains(text(), 'Lodged Date')]/following-sibling::*")[0].content
+                    lodged_date = patent_page.xpath("//td[contains(text(), 'Lodged Date')]/following-sibling::*")[0].content
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Application Title')]")[0] != nil
                     application_title = patent_page.xpath("//td[contains(text(), 'Application Title')]/following-sibling::*")[0].content
@@ -127,7 +127,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
                                                     # If in year 20, no next renewal date e.g. PN EP0665097
                     # Ceased                        # Still has last renewal date, next renewal date, last renewal year, also has not in force date e.g. PN GB2348901
                     # Pending                       # Does not have any renewal-related fields e.g. PN GB2500000
-                                                    # May not even be published - no Publication Number field and has LODGED DATE not FILING DATE e.g. *AN* GB1215684
+                                                    # May not even be published - no Publication Number field and has LODGED DATE not FILING DATE
                     # Terminated before grant       # Has a Not in Force date e.g. PN GB2400000
                     # Awaiting First Examination    # No renewal fields as not yet granted e.g. PN GB2470002
                     # Expired                       # Over 20 years old e.g. PN EP0665079
