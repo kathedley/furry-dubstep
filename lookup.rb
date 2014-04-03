@@ -108,6 +108,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
                 if  patent_page.xpath("//td[contains(text(), 'Application Number')]")[0] != nil
                     application_number = patent_page.xpath("//td[contains(text(), 'Application Number')]/following-sibling::*")[0].content
                     puts "Application Number: " + application_number
+                    logger.info "Application Number: " + application_number
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Publication Number')]")[0] != nil
                     publication_number = patent_page.xpath("//td[contains(text(), 'Publication Number')]/following-sibling::*")[0].content
