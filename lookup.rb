@@ -42,6 +42,15 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
     applicant_line_7 = ""
     applicant_line_8 = ""
     applicant_line_9 = ""
+    applicant_line_10 = ""
+    applicant_line_11 = ""
+    applicant_line_12 = ""
+    applicant_line_13 = ""
+    applicant_line_14 = ""
+    applicant_line_15 = ""
+    applicant_line_16 = ""
+    applicant_line_17 = ""
+    applicant_line_18 = ""
     last_renewal_date = ""
     next_renewal_date = ""
     last_renewal_year = ""
@@ -116,37 +125,64 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
                     application_title = patent_page.xpath("//td[contains(text(), 'Application Title')]/following-sibling::*")[0].content
                     puts "Application Title: " + application_title
                 end
-                if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]")[0] != nil
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[1]")[0] !=nil
-                        applicant_line_1 = patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[1]")[0].content
+                if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]")[0] != nil
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[1]")[0] !=nil
+                        applicant_line_1 = patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[1]")[0].content
                         applicant_name = applicant_line_1
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[2]")[0] !=nil
-                        applicant_line_2 = patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[2]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[2]")[0] !=nil
+                        applicant_line_2 = patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[2]")[0].content
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[3]")[0] !=nil
-                        applicant_line_3 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[3]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[3]")[0] !=nil
+                        applicant_line_3 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[3]")[0].content
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[4]")[0] !=nil
-                        applicant_line_4 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[4]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[4]")[0] !=nil
+                        applicant_line_4 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[4]")[0].content
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[5]")[0] !=nil
-                        applicant_line_5 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[5]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[5]")[0] !=nil
+                        applicant_line_5 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[5]")[0].content
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[6]")[0] !=nil
-                        applicant_line_6 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[6]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[6]")[0] !=nil
+                        applicant_line_6 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[6]")[0].content
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[7]")[0] !=nil
-                        applicant_line_7 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[7]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[7]")[0] !=nil
+                        applicant_line_7 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[7]")[0].content
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[8]")[0] !=nil
-                        applicant_line_8 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[8]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[8]")[0] !=nil
+                        applicant_line_8 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[8]")[0].content
                     end
-                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[9]")[0] !=nil
-                        applicant_line_9 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[9]")[0].content
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[9]")[0] !=nil
+                        applicant_line_9 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[9]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[10]")[0] !=nil
+                        applicant_line_10 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[10]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[11]")[0] !=nil
+                        applicant_line_11 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[11]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[12]")[0] !=nil
+                        applicant_line_12 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[12]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[13]")[0] !=nil
+                        applicant_line_13 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[13]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[14]")[0] !=nil
+                        applicant_line_14 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[14]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[15]")[0] !=nil
+                        applicant_line_15 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[15]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[16]")[0] !=nil
+                        applicant_line_16 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[16]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[17]")[0] !=nil
+                        applicant_line_17 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[17]")[0].content
+                    end
+                    if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[18]")[0] !=nil
+                        applicant_line_18 = ", " + patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[18]")[0].content
                     end
         
-                    applicant_address = applicant_line_2 + applicant_line_3 + applicant_line_4 + applicant_line_5 + applicant_line_6 + applicant_line_7 + applicant_line_8 + applicant_line_9
+                    applicant_address = applicant_line_2 + applicant_line_3 + applicant_line_4 + applicant_line_5 + applicant_line_6 + applicant_line_7 + applicant_line_8 + applicant_line_9  + applicant_line_10  + applicant_line_11  + applicant_line_12  + applicant_line_13  + applicant_line_14  + applicant_line_15  + applicant_line_16  + applicant_line_17  + applicant_line_18
                     
                     puts "Applicant Name: " + applicant_name
                     puts "Applicant Address: " + applicant_address
