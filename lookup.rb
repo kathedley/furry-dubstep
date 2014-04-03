@@ -28,8 +28,20 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
     application_number = ""
     publication_number = ""
     filing_date = ""
+    lodged_date = ""
     status = ""
     application_title = ""
+    applicant_name = ""
+    applicant_line_1 = ""
+    applicant_address = ""
+    applicant_line_2 = ""
+    applicant_line_3 = ""
+    applicant_line_4 = ""
+    applicant_line_5 = ""
+    applicant_line_6 = ""
+    applicant_line_7 = ""
+    applicant_line_8 = ""
+    applicant_line_9 = ""
     last_renewal_date = ""
     next_renewal_date = ""
     last_renewal_year = ""
@@ -67,7 +79,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
             if  #UKif4
                 patent_page.css("//p[@id='AsyncErrorMessage']")[0].content != ""
                 
-                puts "Error message exists"
+                puts "Error message returned!"
                 error_message = patent_page.css("//p[@id='AsyncErrorMessage']")[0].content
                 puts "Message: " + error_message
                 
@@ -79,43 +91,85 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
                     # Please enter a valid publication number.
                     # The patent case type must be UK or EP(UK). e.g. PN EP0665096
                     # No data is held electronically for this case. e.g. PN GB1215686
-            
+                    
             else #related to UKif4
                 # No error message, continue to look for data
-
+                puts "Data returned!"
                 # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
                 if  patent_page.xpath("//td[contains(text(), 'Application Number')]")[0] != nil
                     application_number = patent_page.xpath("//td[contains(text(), 'Application Number')]/following-sibling::*")[0].content
+                    puts "Application Number: " + application_number
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Publication Number')]")[0] != nil
                     publication_number = patent_page.xpath("//td[contains(text(), 'Publication Number')]/following-sibling::*")[0].content
+                    puts "Publication Number: " + publication_number
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Filing Date')]")[0] != nil
                     filing_date = patent_page.xpath("//td[contains(text(), 'Filing Date')]/following-sibling::*")[0].content
+                    puts "Filing Date: " + filing_date
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Lodged Date')]")[0] != nil
                     lodged_date = patent_page.xpath("//td[contains(text(), 'Lodged Date')]/following-sibling::*")[0].content
+                    puts "Lodged Date: " + lodged_date
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Application Title')]")[0] != nil
                     application_title = patent_page.xpath("//td[contains(text(), 'Application Title')]/following-sibling::*")[0].content
+                    puts "Application Title: " + application_title
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]")[0] != nil
-                    applicant = patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::*")[0].content
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[1]")[0] !=nil
+                        applicant_line_1 = patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[1]")[0].content
+                        applicant_name = applicant_line_1
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[2]")[0] !=nil
+                        applicant_line_2 = patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[2]")[0].content
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[3]")[0] !=nil
+                        applicant_line_3 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[3]")[0].content
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[4]")[0] !=nil
+                        applicant_line_4 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[4]")[0].content
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[5]")[0] !=nil
+                        applicant_line_5 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[5]")[0].content
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[6]")[0] !=nil
+                        applicant_line_6 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[6]")[0].content
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[7]")[0] !=nil
+                        applicant_line_7 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[7]")[0].content
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[8]")[0] !=nil
+                        applicant_line_8 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[8]")[0].content
+                    end
+                    if  patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[9]")[0] !=nil
+                        applicant_line_9 = ", " + patent_page.xpath("//td[contains(text(), 'Applicant / Proprietor')]/following-sibling::td//text()[9]")[0].content
+                    end
+        
+                    applicant_address = applicant_line_2 + applicant_line_3 + applicant_line_4 + applicant_line_5 + applicant_line_6 + applicant_line_7 + applicant_line_8 + applicant_line_9
+                    
+                    puts "Applicant Name: " + applicant_name
+                    puts "Applicant Address: " + applicant_address
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Status')]")[0] != nil
                     status = patent_page.xpath("//td[contains(text(), 'Status')]/following-sibling::*")[0].content
+                    puts "Status: " + status
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Last Renewal Date')]")[0] != nil
                     last_renewal_date = patent_page.xpath("//td[contains(text(), 'Last Renewal Date')]/following-sibling::*")[0].content
+                    puts "Last Renewal Date: " + last_renewal_date
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Next Renewal Date')]")[0] != nil
                     next_renewal_date = patent_page.xpath("//td[contains(text(), 'Next Renewal Date')]/following-sibling::*")[0].content
+                    puts "Next Renewal Year:" + next_renewal_date
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]")[0] != nil
                     last_renewal_year = patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]/following-sibling::*")[0].content.to_i
+                    puts "Last Renewal Year: " + last_renewal_year.to_s
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Grant Date')]")[0] != nil
                     grant_date = patent_page.xpath("//td[contains(text(), 'Grant Date')]/following-sibling::*")[0].content.match(/\d{2}+\s+\w+\s+\d{4}/).to_s #finding dates by format #returns first date as string
+                    puts "Grant Date: " + grant_date
                 end
                
                 #Some patents have PCT application and publication number - currently ignoring this e.g. GB2348905
@@ -140,8 +194,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
       
     # Build XML
     xml = Builder::XmlMarkup.new(:indent=>2)
-    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
-                #   Applicant not yet in XML as don't yet know how to deal with the multi-line response that arrives
+    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.applicant_name(applicant_name); p.applicant_address(applicant_address); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
 
     end #ends UKif1
 end #ends allPOlookup
