@@ -197,7 +197,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Next Renewal Date')]")[0] != nil
                     next_renewal_date = patent_page.xpath("//td[contains(text(), 'Next Renewal Date')]/following-sibling::*")[0].content
-                    puts "Next Renewal Year:" + next_renewal_date
+                    puts "Next Renewal Year: " + next_renewal_date
                 end
                 if  patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]")[0] != nil
                     last_renewal_year = patent_page.xpath("//td[contains(text(), 'Year of Last Renewal')]/following-sibling::*")[0].content.to_i
