@@ -14,3 +14,4 @@ gem "gocardless", "~> 1.8.0"
 gem "newrelic_rpm", "~> 3.7.2.192"
 gem "mandrill-api", "~> 1.0.51"
 gem 'httparty', :git => 'git://github.com/kathedley/httparty'
+gem 'mechanize', '~> 2.7.3'
