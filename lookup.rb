@@ -236,7 +236,124 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
     xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.applicant_name(applicant_name); p.applicant_address(applicant_address); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
 
     end #ends UKif1
+
+
+#######################################   FRANCE   #######################################
+
+
+if params[:country] = "france" #FRANCEif1
+    
+    if #FRANCEif2
+        params[:lookuptype] == "application"
+        error_message = ""
+        patent_page_url = "http://regbrvfr.inpi.fr/register/application?lang=en&number=" + params[:number]
+        else
+        patent_page_url = ""
+    end #ends FRANCEif2
+    
+    # First, check if it's a valid page
+    
+    http_status_code = Net::HTTP.get_response(URI.parse(patent_page_url)).code
+    
+    if #FRANCEif3
+        http_status_code.match(/20\d/)
+        
+        patent_page = Nokogiri::HTML(open(patent_page_url))
+        
+        # Next, check there's a patent found at that address
+        if  #FRANCEif4
+            patent_page.xpath("//*[@id=\"body\"]/table/tbody/tr/td")[0] != nil
+            
+            logger.info "Error message returned!\n"
+            error_message = "No patent found under that number."
+            logger.info "Message: " + error_message + "\n"
+            
+            # Possible error messages:
+            # Please enter a valid publication number.
+            # Please enter a valid applcation number.
+            # European patent not yet granted. Check the EPO Register
+            # A case was not found matching this number.
+            # Please enter a valid publication number.
+            # The patent case type must be UK or EP(UK). e.g. PN EP0665096
+            # No data is held electronically for this case. e.g. PN GB1215686
+            
+            else #related to FRANCEif4
+            # No error message, continue to look for data
+            logger.info "Data returned!\n"
+            # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
+            if  patent_page.xpath("//td[contains(text(), 'Application No. and date of filing')]")[0] != nil
+                application_number = patent_page.xpath("//td[contains(text(), 'Application No. and date of filing')]/following-sibling::*")[0].content.match(/^[^\ ]*/).to_s
+                logger.info "Application Number: " + application_number + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'Publication No. and date')]")[0] != nil
+                publication_number = patent_page.xpath("//td[contains(text(), 'Publication No. and date')]/following-sibling::*")[0].content.match(/^[^\ ]*/).to_s
+                logger.info "Publication Number: " + publication_number + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'Application No. and date of filing')]")[0] != nil
+                filing_date = patent_page.xpath("//td[contains(text(), 'Application No. and date of filing')]/following-sibling::*")[0].content.match(/....-..-../).to_s
+                logger.info "Filing Date: " + filing_date + "\n"
+            end
+            if  patent_page.xpath("//font[@size='3']/text()")[0] != nil
+                application_title = patent_page.xpath("//font[@size='3']/text()")[0].content.match(/((?<=\s-\s\s).*[^.]/).to_s
+                logger.info "Title: " + application_title + "\n"
+            end
+            if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]")[0] != nil
+                applicant = patent_page.xpath("//td[starts-with(text(), 'Applicant')]/following-sibling::td//text()[1]")[0].content
+                logger.info "Applicant: " + applicant + "\n"
+            end
+            if  patent_page.xpath("//td[starts-with(text(), 'Proprietor')]")[0] != nil
+                proprietor = patent_page.xpath("//td[starts-with(text(), 'Proprietor')]/following-sibling::td//text()[1]")[0].content
+                logger.info "Proprietor: " + proprietor + "\n"
+            end
+
+            if  patent_page.xpath("//td[contains(text(), 'Status')]")[0] != nil
+                status = patent_page.xpath("//td[contains(text(), 'Status')]/following-sibling::*")[0].content
+                logger.info "Status: " + status + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'Last renewal fee')]")[0] != nil
+                last_renewal_date = patent_page.xpath("//td[contains(text(), 'Last renewal fee')]/following-sibling::*")[0].content.match(/....-..-../).to_s
+                logger.info "Last Renewal Date: " + last_renewal_date + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'Next renewal fee')]")[0] != nil
+                next_renewal_date = patent_page.xpath("//td[contains(text(), 'Next renewal fee')]/following-sibling::*")[0].content
+                logger.info "Next Renewal Year: " + next_renewal_date + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'N° of the renewal fee')]")[0] != nil
+                last_renewal_year = patent_page.xpath("//td[contains(text(), 'N° of the renewal fee')]/following-sibling::*")[0].content.to_i
+                logger.info "Last Renewal Year: " + last_renewal_year.to_s + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'Date of grant')]")[0] != nil
+                grant_date = patent_page.xpath("//td[contains(text(), 'Date of grant')]/following-sibling::*")[0].content.match(/....-..-../).to_s
+                logger.info "Grant Date: " + grant_date + "\n"
+            end
+            
+            #Some patents have PCT application and publication number - currently ignoring this e.g. GB2348905
+            
+            # Statuses seen:
+            # Granted                       # If renewals have been made, will have renewal-related fields e.g. PN EP2120000
+            # If no renewals due yet, will not have any renewal-related fields e.g. PN GB2500003
+            # If first renewal due, will have next renewal date e.g. PN GB2470008
+            # If in year 20, no next renewal date e.g. PN EP0665097
+            # Ceased                        # Still has last renewal date, next renewal date, last renewal year, also has not in force date e.g. PN GB2348901
+            # Pending                       # Does not have any renewal-related fields e.g. PN GB2500000
+            # May not even be published - no Publication Number field and has LODGED DATE not FILING DATE
+            # Terminated before grant       # Has a Not in Force date e.g. PN GB2400000
+            # Awaiting First Examination    # No renewal fields as not yet granted e.g. PN GB2470002
+            # Expired                       # Over 20 years old e.g. PN EP0665079
+            # Void-no translation filed     # Not in force date e.g. PN EP0665084
+            # Application Published
+            
+        end #ends UKif4
+        
+    end #ends FRANCEif3
+    
+    # Build XML
+    xml = Builder::XmlMarkup.new(:indent=>2)
+    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.applicant(applicant); p.proprietor(proprietor); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
+    
+end #ends FRANCEif1
 end #ends allPOlookup
+
 
 
 
