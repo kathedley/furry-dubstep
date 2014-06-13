@@ -326,24 +326,15 @@ if params[:country] = "france" #FRANCEif1
                 grant_date = patent_page.xpath("//td[contains(text(), 'Date of grant')]/following-sibling::*")[0].content.match(/....-..-../).to_s
                 logger.info "Grant Date: " + grant_date + "\n"
             end
+            if  patent_page.xpath("//td[contains(text(), 'Notification date of lapse')]")[0] != nil
+                lapse_date = patent_page.xpath("//td[contains(text(), 'Notification date of lapse')]/following-sibling::*")[0].content.match(/....-..-../).to_s
+                logger.info "Lapse Date: " + grant_date + "\n"
+                status = "Patent lapsed on" + lapse_date
+                logger.info "Status: " + status + "\n"
+            end
             
-            #Some patents have PCT application and publication number - currently ignoring this e.g. GB2348905
             
-            # Statuses seen:
-            # Granted                       # If renewals have been made, will have renewal-related fields e.g. PN EP2120000
-            # If no renewals due yet, will not have any renewal-related fields e.g. PN GB2500003
-            # If first renewal due, will have next renewal date e.g. PN GB2470008
-            # If in year 20, no next renewal date e.g. PN EP0665097
-            # Ceased                        # Still has last renewal date, next renewal date, last renewal year, also has not in force date e.g. PN GB2348901
-            # Pending                       # Does not have any renewal-related fields e.g. PN GB2500000
-            # May not even be published - no Publication Number field and has LODGED DATE not FILING DATE
-            # Terminated before grant       # Has a Not in Force date e.g. PN GB2400000
-            # Awaiting First Examination    # No renewal fields as not yet granted e.g. PN GB2470002
-            # Expired                       # Over 20 years old e.g. PN EP0665079
-            # Void-no translation filed     # Not in force date e.g. PN EP0665084
-            # Application Published
-            
-        end #ends UKif4
+        end #ends FRANCEif4
         
     end #ends FRANCEif3
     
@@ -352,9 +343,8 @@ if params[:country] = "france" #FRANCEif1
     xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.applicant(applicant); p.proprietor(proprietor); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
     
 end #ends FRANCEif1
+
 end #ends allPOlookup
-
-
 
 
 
