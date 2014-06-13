@@ -294,7 +294,7 @@ if params[:country] = "france" #FRANCEif1
                 logger.info "Filing Date: " + filing_date + "\n"
             end
             if  patent_page.xpath("//font[@size='3']/text()")[0] != nil
-                application_title = patent_page.xpath("//font[@size='3']/text()")[0].content.match(/((?<=\s-\s\s).*[^.]/).to_s
+                application_title = patent_page.xpath("//font[@size='3']/text()")[0].content.match(/(?<=\s-\s\s).*[^.]/).to_s
                 logger.info "Title: " + application_title + "\n"
             end
             if  patent_page.xpath("//td[starts-with(text(), 'Applicant')]")[0] != nil
