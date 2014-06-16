@@ -26,40 +26,7 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
     
     # the variables are params[:country], params[:lookuptype] and params[:number]
     
-    # Setting up default response values
-    http_status_code = ""
-    application_number = ""
-    publication_number = ""
-    filing_date = ""
-    lodged_date = ""
-    status = ""
-    application_title = ""
-    applicant_name = ""
-    applicant_line_1 = ""
-    applicant_address = ""
-    applicant_line_2 = ""
-    applicant_line_3 = ""
-    applicant_line_4 = ""
-    applicant_line_5 = ""
-    applicant_line_6 = ""
-    applicant_line_7 = ""
-    applicant_line_8 = ""
-    applicant_line_9 = ""
-    applicant_line_10 = ""
-    applicant_line_11 = ""
-    applicant_line_12 = ""
-    applicant_line_13 = ""
-    applicant_line_14 = ""
-    applicant_line_15 = ""
-    applicant_line_16 = ""
-    applicant_line_17 = ""
-    applicant_line_18 = ""
-    last_renewal_date = ""
-    next_renewal_date = ""
-    last_renewal_year = ""
-    error_message = ""
-    grant_date = ""
-
+   
 
 #######################################   UK   #######################################
 
@@ -67,6 +34,41 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
 
 
     if params[:country] = "uk" #UKif1
+        
+        # Setting up default response values
+        http_status_code = ""
+        application_number = ""
+        publication_number = ""
+        filing_date = ""
+        lodged_date = ""
+        status = ""
+        application_title = ""
+        applicant_name = ""
+        applicant_line_1 = ""
+        applicant_address = ""
+        applicant_line_2 = ""
+        applicant_line_3 = ""
+        applicant_line_4 = ""
+        applicant_line_5 = ""
+        applicant_line_6 = ""
+        applicant_line_7 = ""
+        applicant_line_8 = ""
+        applicant_line_9 = ""
+        applicant_line_10 = ""
+        applicant_line_11 = ""
+        applicant_line_12 = ""
+        applicant_line_13 = ""
+        applicant_line_14 = ""
+        applicant_line_15 = ""
+        applicant_line_16 = ""
+        applicant_line_17 = ""
+        applicant_line_18 = ""
+        last_renewal_date = ""
+        next_renewal_date = ""
+        last_renewal_year = ""
+        error_message = ""
+        grant_date = ""
+
 
         if #UKif2
             params[:lookuptype] == "application"
@@ -245,7 +247,42 @@ if params[:country] = "france" #FRANCEif1
     
     if #FRANCEif2
         params[:lookuptype] == "application"
+        
+        # Setting up default response values
+        http_status_code = ""
+        application_number = ""
+        publication_number = ""
+        filing_date = ""
+        lodged_date = ""
+        status = ""
+        application_title = ""
+        applicant_name = ""
+        applicant_line_1 = ""
+        applicant_address = ""
+        applicant_line_2 = ""
+        applicant_line_3 = ""
+        applicant_line_4 = ""
+        applicant_line_5 = ""
+        applicant_line_6 = ""
+        applicant_line_7 = ""
+        applicant_line_8 = ""
+        applicant_line_9 = ""
+        applicant_line_10 = ""
+        applicant_line_11 = ""
+        applicant_line_12 = ""
+        applicant_line_13 = ""
+        applicant_line_14 = ""
+        applicant_line_15 = ""
+        applicant_line_16 = ""
+        applicant_line_17 = ""
+        applicant_line_18 = ""
+        last_renewal_date = ""
+        next_renewal_date = ""
+        last_renewal_year = ""
         error_message = ""
+        grant_date = ""
+
+
         patent_page_url = "http://regbrvfr.inpi.fr/register/application?lang=en&number=" + params[:number]
         else
         patent_page_url = ""
@@ -329,7 +366,7 @@ if params[:country] = "france" #FRANCEif1
             if  patent_page.xpath("//td[contains(text(), 'Notification date of lapse')]")[0] != nil
                 lapse_date = patent_page.xpath("//td[contains(text(), 'Notification date of lapse')]/following-sibling::*")[0].content.match(/....-..-../).to_s
                 logger.info "Lapse Date: " + grant_date + "\n"
-                status = "Patent lapsed on" + lapse_date
+                status = "Patent lapsed on " + lapse_date
                 logger.info "Status: " + status + "\n"
             end
             
