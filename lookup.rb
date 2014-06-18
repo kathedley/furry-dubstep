@@ -33,7 +33,8 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
 ### not yet looked up license of right ###
 
 
-    if params[:country] = "uk" #UKif1
+    if params[:country] == "uk" #UKif1
+        logger.info "UK patent lookup"
         
         # Setting up default response values
         http_status_code = ""
@@ -232,56 +233,42 @@ get '/lookup/:country/:lookuptype/:number' do #allPOlookup
             end #ends UKif4
         
         end #ends UKif3
-      
+        
+    logger.info "Building UK XML"
     # Build XML
     xml = Builder::XmlMarkup.new(:indent=>2)
-    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.applicant_name(applicant_name); p.applicant_address(applicant_address); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
+    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number(publication_number); p.applicant_name(applicant_name); p.applicant_address(applicant_address); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
 
-    end #ends UKif1
+#end #ends UKif1
 
 
 #######################################   FRANCE   #######################################
 
 
-if params[:country] = "france" #FRANCEif1
+elsif params[:country] == "france" #FRANCEif1
     
+    logger.info "France patent lookup"
+   
+   # Setting up default response values
+    http_status_code = ""
+    application_number = ""
+    publication_number = ""
+    filing_date = ""
+    lodged_date = ""
+    status = ""
+    application_title = ""
+    applicant = ""
+    proprietor = ""
+    last_renewal_date = ""
+    next_renewal_date = ""
+    last_renewal_year = ""
+    error_message = ""
+    grant_date = ""
+
+
     if #FRANCEif2
         params[:lookuptype] == "application"
         
-        # Setting up default response values
-        http_status_code = ""
-        application_number = ""
-        publication_number = ""
-        filing_date = ""
-        lodged_date = ""
-        status = ""
-        application_title = ""
-        applicant_name = ""
-        applicant_line_1 = ""
-        applicant_address = ""
-        applicant_line_2 = ""
-        applicant_line_3 = ""
-        applicant_line_4 = ""
-        applicant_line_5 = ""
-        applicant_line_6 = ""
-        applicant_line_7 = ""
-        applicant_line_8 = ""
-        applicant_line_9 = ""
-        applicant_line_10 = ""
-        applicant_line_11 = ""
-        applicant_line_12 = ""
-        applicant_line_13 = ""
-        applicant_line_14 = ""
-        applicant_line_15 = ""
-        applicant_line_16 = ""
-        applicant_line_17 = ""
-        applicant_line_18 = ""
-        last_renewal_date = ""
-        next_renewal_date = ""
-        last_renewal_year = ""
-        error_message = ""
-        grant_date = ""
-
 
         patent_page_url = "http://regbrvfr.inpi.fr/register/application?lang=en&number=" + params[:number]
         else
@@ -304,15 +291,6 @@ if params[:country] = "france" #FRANCEif1
             logger.info "Error message returned!\n"
             error_message = "No patent found under that number."
             logger.info "Message: " + error_message + "\n"
-            
-            # Possible error messages:
-            # Please enter a valid publication number.
-            # Please enter a valid applcation number.
-            # European patent not yet granted. Check the EPO Register
-            # A case was not found matching this number.
-            # Please enter a valid publication number.
-            # The patent case type must be UK or EP(UK). e.g. PN EP0665096
-            # No data is held electronically for this case. e.g. PN GB1215686
             
             else #related to FRANCEif4
             # No error message, continue to look for data
@@ -375,11 +353,144 @@ if params[:country] = "france" #FRANCEif1
         
     end #ends FRANCEif3
     
+    logger.info "Building France XML"
     # Build XML
     xml = Builder::XmlMarkup.new(:indent=>2)
-    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number (publication_number); p.applicant(applicant); p.proprietor(proprietor); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
+    xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.publication_number(publication_number); p.applicant(applicant); p.proprietor(proprietor); p.filing_date(filing_date); p.status(status); p.grant_date(grant_date); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.last_renewal_year(last_renewal_year); p.error_message(error_message) }
     
-end #ends FRANCEif1
+    
+    #end #ends FRANCEif1
+
+
+#######################################   GERMANY   #######################################
+
+
+elsif params[:country] == "germany" #GERMANYif1
+    
+    logger.info "Germany patent lookup"
+    
+    if #GERMANYif2
+        params[:lookuptype] == "application"
+        
+        # Setting up default response values
+        http_status_code = ""
+        de_application_number = ""
+        ep_application_number = ""
+        wo_application_number = ""
+        ep_publication_number = ""
+        wo_publication_number = ""
+        de_filing_date = ""
+        ep_filing_date = ""
+        wo_filing_date = ""
+        lodged_date = ""
+        status = ""
+        title = ""
+        applicant = ""
+        next_renewal_year = ""
+        next_renewal_date = ""
+        error_message = ""
+        grant_publication_date = ""
+        
+        
+        
+        patent_page_url = "https://register.dpma.de/DPMAregister/pat/register?lang=en&AKZ=" + params[:number]
+        else
+        patent_page_url = ""
+    end #ends GERMANYif2
+    
+    # First, check if it's a valid page
+    
+    http_status_code = Net::HTTP.get_response(URI.parse(patent_page_url)).code
+    
+    if #GERMANYif3
+        http_status_code.match(/20\d/)
+        
+        patent_page = Nokogiri::HTML(open(patent_page_url))
+        
+        # Next, check there's a patent found at that address
+        if  #GERMANYif4
+            patent_page.xpath("//*[@id=\"index\"]/div[5]/p[1]")[0] == "Errors have occurred:"
+            
+            logger.info "Error message returned!\n"
+            error_message = "No patent found under that number."
+            logger.info "Message: " + error_message + "\n"
+            
+            else #related to GERMANYif4
+            # No error message, continue to look for data
+            logger.info "Data returned!\n"
+            
+            # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
+            if  patent_page.xpath("//td[contains(text(), 'DAKZ')]")[0] != nil
+                de_application_number = patent_page.xpath("//td[contains(text(), 'DAKZ')]/following-sibling::*")[0].content
+                logger.info "DE Application Number: " + de_application_number + "\n"
+                end
+            if  patent_page.xpath("//td[contains(text(), 'EAKZ')]")[0] != nil
+                ep_application_number = patent_page.xpath("//td[contains(text(), 'EAKZ')]/following-sibling::*")[0].content
+                logger.info "EP Application Number: " + ep_application_number + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'WAKZ')]")[0] != nil
+                wo_application_number = patent_page.xpath("//td[contains(text(), 'WAKZ')]/following-sibling::*")[0].content
+                logger.info "WO Application Number: " + wo_application_number + "\n"
+            end
+            if  patent_page.xpath("//td[(text() = 'EPN')]")[0] != nil
+                ep_publication_number = patent_page.xpath("//td[(text() = 'EPN')]/following-sibling::*")[0].content
+                logger.info "EP Publication Number: " + ep_publication_number + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'WPN')]")[0] != nil
+                wo_publication_number = patent_page.xpath("//td[contains(text(), 'WPN')]/following-sibling::*")[0].content
+                logger.info "WO Publication Number: " + wo_publication_number + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'DAT')]")[0] != nil
+                de_filing_date = patent_page.xpath("//td[contains(text(), 'DAT')]/following-sibling::*")[0].content
+                logger.info "DE Filing Date: " + de_filing_date + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'EAT')]")[0] != nil
+                ep_filing_date = patent_page.xpath("//td[contains(text(), 'EAT')]/following-sibling::*")[0].content
+                logger.info "EP Filing Date: " + ep_filing_date + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'WAT')]")[0] != nil
+                wo_filing_date = patent_page.xpath("//td[contains(text(), 'WAT')]/following-sibling::*")[0].content
+                logger.info "WO Filing Date: " + wo_filing_date + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'TI')]")[0] != nil
+                title = patent_page.xpath("//td[contains(text(), 'TI')]/following-sibling::*")[0].content
+                logger.info "Title: " + title + "\n"
+            end
+            if  patent_page.xpath("//td[starts-with(text(), 'INH')]")[0] != nil
+                applicant = patent_page.xpath("//td[starts-with(text(), 'INH')]/following-sibling::*")[0].content
+                logger.info "Applicant: " + applicant + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'ST')]")[0] != nil
+                status = patent_page.xpath("//td[contains(text(), 'ST')]/following-sibling::*")[0].content
+                logger.info "Status: " + status + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'FT')]")[0] != nil
+                next_renewal_date = patent_page.xpath("//td[contains(text(), 'FT')]/following-sibling::*")[0].content.match(/...\s\d\d,\s\d\d\d\d/).to_s
+                logger.info "Next Renewal Date: " + next_renewal_date + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'FT')]")[0] != nil
+                next_renewal_year = patent_page.xpath("//td[contains(text(), 'FT')]/following-sibling::*")[0].content.match(/(\d+(?=(th|nd|rd)))/).to_s
+                logger.info "Next Renewal Year: " + next_renewal_year + "\n"
+            end
+            if  patent_page.xpath("//td[contains(text(), 'PET')]")[0] != nil
+                grant_publication_date = patent_page.xpath("//td[contains(text(), 'PET')]/following-sibling::*")[0].content
+                logger.info "Grant Publication Date: " + grant_publication_date + "\n"
+            end
+            
+        end #ends GERMANYif4
+        
+    end #ends GERMANYif3
+    
+    
+    logger.info "Building Germany XML"
+    # Build XML
+    xml = Builder::XmlMarkup.new(:indent=>2)
+    xml.patent { |p| p.http_status_code(http_status_code); p.de_application_number(de_application_number); p.ep_application_number(ep_application_number); p.wo_application_number(wo_application_number); p.ep_publication_number(ep_publication_number); p.wo_publication_number(wo_publication_number); p.applicant(applicant); p.de_filing_date(de_filing_date); p.ep_filing_date(ep_filing_date); p.wo_filing_date(wo_filing_date); p.status(status); p.grant_publication_date(grant_publication_date); p.title(title);  p.next_renewal_date(next_renewal_date); p.next_renewal_year(next_renewal_year); p.error_message(error_message) }
+    #end #ends GERMANYif1
+
+
+else # no known country - do nothing - related to all if and else ifs number 1s
+end #ends all if and else ifs number 1s
 
 end #ends allPOlookup
 
