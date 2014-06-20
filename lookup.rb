@@ -331,7 +331,7 @@ elsif params[:country] == "france" #FRANCEif1
             end
             if  patent_page.xpath("//td[contains(text(), 'Next renewal fee')]")[0] != nil
                 next_renewal_date = patent_page.xpath("//td[contains(text(), 'Next renewal fee')]/following-sibling::*")[0].content
-                logger.info "Next Renewal Year: " + next_renewal_date + "\n"
+                logger.info "Next Renewal Date: " + next_renewal_date + "\n"
             end
             if  patent_page.xpath("//td[contains(text(), 'N° of the renewal fee')]")[0] != nil
                 last_renewal_year = patent_page.xpath("//td[contains(text(), 'N° of the renewal fee')]/following-sibling::*")[0].content.to_i
@@ -489,9 +489,131 @@ elsif params[:country] == "germany" #GERMANYif1
     #end #ends GERMANYif1
 
 
-else # no known country - do nothing - related to all if and else ifs number 1s
-end #ends all if and else ifs number 1s
+#######################################   FRANCE   #######################################
 
+
+elsif params[:country] == "australia" #AUSTRALIAif1
+
+logger.info "Australia patent lookup"
+
+# Setting up default response values
+http_status_code = ""
+application_number = ""
+filing_date = ""
+status = ""
+application_title = ""
+applicant = ""
+applicant_address = ""
+last_renewal_date = ""
+next_renewal_date = ""
+next_renewal_year = ""
+error_message = ""
+priority_date = ""
+
+
+if #AUSTRALIAif2
+    params[:lookuptype] == "application"
+    agent = Mechanize.new
+    patent_page_url = "http://pericles.ipaustralia.gov.au/ols/auspat/applicationDetails.do?applicationNo=" + params[:number]
+    disclaimer_page = agent.get("http://pericles.ipaustralia.gov.au/ols/auspat/")
+    
+    # Get the form
+    form = agent.page.form
+    # Get the button you want from the form
+    button = form.button_with(:value => "Accept")
+    # Submit the form using that button
+    agent.submit(form, button)
+    logger.info agent.cookies.to_s
+    
+    patent_page = agent.get(patent_page_url)
+    
+    else
+    patent_page_url = ""
+end #ends AUSTRALIAif2
+
+# First, check if it's a valid page
+
+http_status_code = Net::HTTP.get_response(URI.parse(patent_page_url)).code
+
+if #AUSTRALIAif3
+    http_status_code.match(/20\d/)
+    
+    #patent_page = Nokogiri::HTML(open(patent_page_url))
+    
+    # Next, check there's a patent found at that address
+    if  #AUSTRALIAif4
+        patent_page.parser.xpath("//*[@id=\"content\"]/div/p[1]/text()")[0] == "There was a problem trying to retrieve this record. Please check the application number and try again."
+        
+        logger.info "Error message returned!\n"
+        error_message = "No patent found under that number."
+        logger.info "Message: " + error_message + "\n"
+        
+        else #related to AUSTRALIAif4
+        # No error message, continue to look for data
+        logger.info "Data returned!\n"
+        # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
+        if  patent_page.parser.xpath("//td[contains(text(), 'Australian application number')]") != nil
+            application_number = patent_page.parser.xpath("//td[contains(text(), 'Australian application number')]/following-sibling::*[1]")[0].content
+            logger.info "Application Number: " + application_number + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Filing date')]")[0] != nil
+            filing_date = patent_page.parser.xpath("//td[contains(text(), 'Filing date')]/following-sibling::*[1]")[0].content
+            logger.info "Filing Date: " + filing_date + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Invention title')]")[0] != nil
+            application_title = patent_page.parser.xpath("//td[contains(text(), 'Invention title')]/following-sibling::*[1]")[0].content
+            logger.info "Title: " + application_title + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Applicant')]")[0] != nil
+            applicant = patent_page.parser.xpath("//td[contains(text(), 'Applicant')]/following-sibling::*[1]")[0].content
+            logger.info "Applicant: " + applicant + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Applicant address')]")[0] != nil
+            applicant_address = patent_page.parser.xpath("//td[contains(text(), 'Applicant address')]/following-sibling::*[1]")[0].content.match(/(\w+ )+\w+/).to_s
+            logger.info "Applicant address: " + applicant_address + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Application status')]")[0] != nil
+            status = patent_page.parser.xpath("//td[contains(text(), 'Application status')]/following-sibling::*[1]")[0].content
+            logger.info "Status: " + status + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Date paid')]")[0] != nil
+            last_renewal_date = patent_page.parser.xpath("//td[contains(text(), 'Date paid')]/following-sibling::*[1]")[0].content
+            logger.info "Last Renewal Date: " + last_renewal_date + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Paid to date')]")[0] != nil
+            next_renewal_date = patent_page.parser.xpath("//td[contains(text(), 'Paid to date')]/following-sibling::*[1]")[0].content
+            logger.info "Next Renewal Date: " + next_renewal_date + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Next fee due')]")[0] != nil
+            next_renewal_year = patent_page.parser.xpath("//td[contains(text(), 'Next fee due')]/following-sibling::*[1]")[0].content.match(/\d+/).to_s
+            logger.info "Next Renewal Year: " + next_renewal_year + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Earliest priority date')]")[0] != nil
+            priority_date = patent_page.parser.xpath("//td[contains(text(), 'Earliest priority date')]/following-sibling::*[1]")[0].content
+            logger.info "Priority Date: " + priority_date + "\n"
+        end
+        
+        
+    end #ends AUSTRALIAif4
+    
+end #ends AUSTRALIAif3
+
+logger.info "Building Australia XML"
+# Build XML
+xml = Builder::XmlMarkup.new(:indent=>2)
+xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.applicant(applicant); p.applicant_address(applicant_address); p.filing_date(filing_date); p.status(status); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.next_renewal_year(next_renewal_year); p.priority_date(priority_date); p.error_message(error_message) }
+
+
+
+
+
+####################################   End of all country specific code   ####################################
+
+
+    else # no known country - do nothing - related to all if and else ifs number 1s
+
+    end #ends all if and else ifs number 1s
+    
 end #ends allPOlookup
 
 
