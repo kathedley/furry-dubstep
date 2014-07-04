@@ -987,8 +987,8 @@ get '/leadgen/totalpatnumbersearch/:applicant' do #total patent number search
         results_page = Nokogiri::HTML(open(results_page_url))
         
         # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
-        if  results_page.css(".epoBarItem.wordBreakDiv>p>b")[0] != nil
-            totalpatentnumber = results_page.css(".epoBarItem.wordBreakDiv>p>b")[0].content
+        if  results_page.css(".epoBarItem>p>b")[0] != nil
+            totalpatentnumber = results_page.css(".epoBarItem>p>b")[0].content
             logger.info "Number of Patents Found: " + totalpatentnumber + "\n"
         end
     end
