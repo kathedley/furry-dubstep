@@ -489,7 +489,7 @@ elsif params[:country] == "germany" #GERMANYif1
     #end #ends GERMANYif1
 
 
-#######################################   FRANCE   #######################################
+#######################################   AUSTRALIA   #######################################
 
 
 elsif params[:country] == "australia" #AUSTRALIAif1
@@ -509,6 +509,8 @@ next_renewal_date = ""
 next_renewal_year = ""
 error_message = ""
 priority_date = ""
+patent_page_url = ""
+disclaimer_page = ""
 
 
 if #AUSTRALIAif2
@@ -604,6 +606,128 @@ xml = Builder::XmlMarkup.new(:indent=>2)
 xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.applicant(applicant); p.applicant_address(applicant_address); p.filing_date(filing_date); p.status(status); p.application_title(application_title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.next_renewal_year(next_renewal_year); p.priority_date(priority_date); p.error_message(error_message) }
 
 
+
+
+#######################################   US   #######################################
+
+
+elsif params[:country] == "us" #USif1
+
+logger.info "US patent lookup"
+
+# Setting up default response values
+http_status_code = ""
+application_number = ""
+patent_number = ""
+filing_date = ""
+grant_date = ""
+status = ""
+title = ""
+entity_type = ""
+service_address = ""
+payment_window_start = ""
+surcharge_date = ""
+error_message = ""
+shopping_homepage = ""
+search_page = ""
+
+
+if #USif2
+    # params[:lookuptype] - using as application number
+    # params[:number] - using as patent number
+    agent = Mechanize.new
+    shopping_homepage = agent.get("https://ramps.uspto.gov/eram/")
+    search_page = agent.get("https://ramps.uspto.gov/eram/patentMaintFees.do")
+    logger.info agent.cookies.to_s
+    
+    # Get the form
+    form = agent.page.form
+    # Fill in form
+    form.field_with(:name => 'patentNum').value = params[:number]
+    form.field_with(:name => 'applicationNum').value = params[:lookuptype]
+    # Get the button you want from the form
+    button = form.button_with(:value => "Get Bibliographic Data")
+    # Submit the form using that button
+    patent_page = agent.submit(form, button)
+    logger.info agent.cookies.to_s
+    logger.info patent_page
+
+
+
+    
+    else
+    patent_page = ""
+end #ends USif2
+
+# Next, check patent page is a valid page
+
+http_status_code = patent_page.code
+
+if #USif3
+    http_status_code.match(/20\d/)
+    
+    #patent_page = Nokogiri::HTML(open(patent_page_url))
+    
+    # Next, check there are no error messages
+    if  #USif4
+        search_page.parser.css("//span[@class='errMsg']/text()") == "Application Number and Patent Number Mismatch."
+        logger.info "Error message returned!\n"
+        error_message = search_page.parser.css("//span[@class='errMsg']")[0].content
+        logger.info "Unable to retrieve patent. \n"
+        
+        else #related to USif4
+        # No error message, continue to look for data
+        logger.info "Data returned!\n"
+        # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
+        if  patent_page.parser.xpath("//td[contains(text(), 'Application Number')]") != nil
+            application_number = patent_page.parser.xpath("/html").to_s
+            logger.info "Application Number: " + application_number + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Patent Number')]") != nil
+            patent_number = patent_page.parser.xpath("//td[contains(text(), 'Patent Number')]/following-sibling::*")[0].content
+            logger.info "Patent Number: " + patent_number + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Filing Date')]") != nil
+            filing_date = patent_page.parser.xpath("//tr[td[contains(text(), 'Filing Date')]]").to_s
+            logger.info "Filing Date: " + filing_date + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Issue Date')]") != nil
+            grant_date = patent_page.parser.xpath("//td[contains(text(), 'Issue Date')]/following-sibling::*")[0].content
+            logger.info "Grant Date: " + grant_date + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Title')]") != nil
+            title = patent_page.parser.xpath("//td[contains(text(), 'Title')]/following-sibling::*")[0].content
+            logger.info "Title: " + title + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Entity')]") != nil
+            entity_type = patent_page.parser.xpath("//td[contains(text(), 'Entity')]/following-sibling::*")[0].content.camelize
+            logger.info "Entity Type: " + entity_type + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Address for fee purposes')]") != nil
+            service_address = patent_page.parser.xpath("//td[contains(text(), 'Address for fee purposes')]/following-sibling::*")[0].content
+            logger.info "Service Address: " + service_address + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Application status')]") != nil
+            status = patent_page.parser.xpath("//td[contains(text(), 'Application status')]/following-sibling::*")[0].content
+            logger.info "Status: " + status + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Window Opens')]") != nil
+            payment_window_start = patent_page.parser.xpath("//td[contains(text(), 'Window Opens')]/following-sibling::*")[0].content.match #INCOMPLETE
+            logger.info "Payment Window Start: " + payment_window_start + "\n"
+        end
+        if  patent_page.parser.xpath("//td[contains(text(), 'Surcharge Date')]") != nil
+            surcharge_date = patent_page.parser.xpath("//td[contains(text(), 'Surcharge Date')]/following-sibling::*")[0].content
+            logger.info "Surcharge Date: " + surcharge_date + "\n"
+        end
+        
+    end #ends USif4
+    
+end #ends USif3
+
+logger.info "Building US XML"
+# Build XML
+xml = Builder::XmlMarkup.new(:indent=>2)
+xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.patent_number(patent_number); p.entity_type(entity_type); p.service_address(service_address); p.filing_date(filing_date); p.grant_date(grant_date); p.status(status); p.title(title); p.payment_window_start(payment_window_start); p.surcharge_date(surcharge_date); p.error_message(error_message) }
 
 
 
@@ -837,3 +961,41 @@ end #ends preauthbill do1
 #        redirect url
 #    end #ends begin1
 #end #ends do2
+
+
+
+
+#################################### TOTAL PATENT NUMBER SEARCH ###################################
+
+
+get '/leadgen/totalpatnumbersearch/:applicant' do #total patent number search
+    
+    logger.info "Performing total patent number search on Espacenet\n"
+
+    #reset variables
+    totalpatentnumber = 0
+    
+    results_page_url = "http://worldwide.espacenet.com/searchResults?compact=false&ST=advanced&locale=en_EP&DB=EPODOC&PA=" + params[:applicant]
+
+    # First, check if it's a valid page
+    http_status_code = Net::HTTP.get_response(URI.parse(results_page_url)).code
+    logger.info "Espacenet HTTP Code: " + http_status_code + "\n"
+
+
+    if http_status_code.match(/20\d/)
+    
+        results_page = Nokogiri::HTML(open(results_page_url))
+        
+        # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
+        if  results_page.css(".epoBarItem.wordBreakDiv>p>b")[0] != nil
+            totalpatentnumber = results_page.css(".epoBarItem.wordBreakDiv>p>b")[0].content
+            logger.info "Number of Patents Found: " + totalpatentnumber + "\n"
+        end
+    end
+    
+    #Build XML
+    xml = Builder::XmlMarkup.new(:indent=>2)
+    xml.result { |n| n.http_status_code(http_status_code); n.totalpatentnumber(totalpatentnumber) }
+
+    end #total patent number search
+
