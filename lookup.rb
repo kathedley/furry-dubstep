@@ -608,6 +608,181 @@ xml.patent { |p| p.http_status_code(http_status_code); p.application_number(appl
 
 
 
+
+
+#######################################   CANADA   #######################################
+
+
+elsif params[:country] == "canada" #CANADA
+
+logger.info "Canada patent lookup \n"
+
+# Setting up default response values
+http_status_code = ""
+application_number = ""
+world_application_number = ""
+world_publication_number = ""
+filing_date = ""
+status = ""
+title = ""
+applicant = ""
+grant_date = ""
+local_agent = ""
+last_renewal_date = ""
+next_renewal_date = ""
+error_message = ""
+patent_title_page_url = ""
+patent_renewal_page_url = ""
+
+if #CANADA if2
+    params[:lookuptype] == "document"
+    agent = Mechanize.new
+    patent_title_page_url = "http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/" + params[:number] + "/summary.html?type=number_search"
+    patent_renewal_page_url = "http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/" + params[:number] + "/financial_transactions.html?type=number_search"
+    
+    else
+    patent_page_url = ""
+end #ends CANADA if2
+
+# First, check if it's a valid page
+
+http_status_code = Net::HTTP.get_response(URI.parse(patent_title_page_url)).code
+logger.info "HTTP Status Code: " + http_status_code + "\n"
+
+
+if #CANADA if3
+http_status_code.match(/20\d/)
+    
+    #patent_title_page = Nokogiri::HTML(open(patent_title_page_url))
+    
+    patent_title_page = agent.get(patent_title_page_url)
+    
+    # Next, check there's a patent found at that address
+    if  #CANADA if4.1
+        patent_title_page.parser.xpath("/html/body/div[1]/div/div[6]/div[2]/h2/text()") == "Patent Not Found"
+        
+        logger.info "Error message returned!\n"
+        error_message = "No title page patent found under that number."
+        logger.info "Message: " + error_message + "\n"
+        
+        else #related to CANADA if4.1
+        # No error message, continue to look for data
+        logger.info "Title data returned!\n"
+        
+        # Retrieving page data: Checking if a field exists, and if so, picking up the related contents
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'English Title')]]")[0] != nil
+            title = patent_title_page.parser.xpath("//th[a[contains(text(), 'English Title')]]/following-sibling::*")[0].content.match(/(\w+ )+\w+/).to_s
+            logger.info "Title: " + title + "\n"
+        end
+        if  patent_title_page.parser.xpath("//td[a[contains(text(), '(11)')]]") != nil
+            application_number = patent_title_page.parser.xpath("//td[a[contains(text(), '(11)')]]/strong/text()")[0].content.match(/CA\s\d+/).to_s
+            logger.info "Application Number: " + application_number + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Filed')]]")[0] != nil
+            filing_date = patent_title_page.parser.xpath("//th[a[contains(text(), 'Filed')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
+            logger.info "Filing Date: " + filing_date + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'PCT Filing Date')]]")[0] != nil
+            filing_date = patent_title_page.parser.xpath("//th[a[contains(text(), 'PCT Filing Date')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
+
+            logger.info "Filing Date: " + filing_date + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Applicants')]]")[0] != nil
+            applicant = patent_title_page.parser.xpath("//th[a[contains(text(), 'Applicants')]]/following-sibling::*")[0].content.match(/(\w+ )+\w+/).to_s
+            logger.info "Applicant: " + applicant + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Issued')]]")[0] != nil
+            grant_date = patent_title_page.parser.xpath("//th[a[contains(text(), 'Issued')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
+
+            logger.info "Grant Date: " + grant_date + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'PCT Filing Number')]]")[0] != nil
+            world_application_number = patent_title_page.parser.xpath("//th[a[contains(text(), 'PCT Filing Number')]]/following-sibling::*")[0].content
+            logger.info "World Application Number: " + world_application_number + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'International Publication Number')]]")[0] != nil
+            world_publication_number = patent_title_page.parser.xpath("//th[a[contains(text(), 'International Publication Number')]]/following-sibling::*")[0].content
+            logger.info "World Publication Number: " + world_publication_number + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Agent')]]")[0] != nil
+            local_agent = patent_title_page.parser.xpath("//th[a[contains(text(), 'Agent')]]/following-sibling::*")[0].content.match(/(\w+ )+\w+/).to_s
+            logger.info "Agent: " + local_agent + "\n"
+        end
+
+        # Set up status
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Granted')]]")[0] != nil
+            status = "Granted"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Patent Application')]]")[0] != nil
+            status = "Application in Progress"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Reissued')]]")[0] != nil
+            status = "Reissued"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Dead Application')]]")[0] != nil
+            status = "Application Dead"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Withdrawn Application')]]")[0] != nil
+            status = "Application Withdrawn"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Surrendered')]]")[0] != nil
+            status = "Surrendered"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Lapsed')]]")[0] != nil
+            status = "Lapsed"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Expired')]]")[0] != nil
+            status = "Expired"
+            logger.info "Status unless changed later: " + status + "\n"
+        end
+
+        # Next open renewal page
+        patent_renewal_page = agent.get(patent_renewal_page_url)
+        
+        if  #CANADA if4.2
+            patent_renewal_page.parser.xpath("html/body/div/div/div[6]/div[2]/h2/text()") == "Patent Not Found"
+            
+            logger.info "Error message returned!\n"
+            error_message = "No renewal page for patent found under that number."
+            logger.info "Message: " + error_message + "\n"
+            
+            else #related to CANADA if4.2
+            # No error message, continue to look for data
+            logger.info "Renewal data returned!\n"
+
+                if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Last Payment')]]")[0] != nil
+                    last_renewal_date = patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Last Payment')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
+
+                    logger.info "Last Renewal Date: " + last_renewal_date + "\n"
+                end
+                if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Next Payment')]]")[0] != nil
+                    next_renewal_date = patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Next Payment')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
+
+                    logger.info "Next Renewal Date: " + next_renewal_date + "\n"
+                end
+                
+        end #ends CANADA if4.2
+        
+    end #ends CANADA if4.1
+    
+end #ends CANADA if3
+
+logger.info "Building Canada XML"
+# Build XML
+xml = Builder::XmlMarkup.new(:indent=>2)
+xml.patent { |p| p.http_status_code(http_status_code); p.application_number(application_number); p.world_application_number(world_application_number); p.world_publication_number(world_publication_number); p.applicant(applicant); p.grant_date(grant_date); p.filing_date(filing_date); p.status(status); p.title(title); p.last_renewal_date(last_renewal_date); p.next_renewal_date(next_renewal_date); p.local_agent(local_agent); p.error_message(error_message) }
+
+
+
+
+
 #######################################   US   #######################################
 
 
@@ -651,8 +826,6 @@ if #USif2
     patent_page = agent.submit(form, button)
     logger.info agent.cookies.to_s
     logger.info patent_page
-
-
 
     
     else
