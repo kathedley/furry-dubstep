@@ -640,8 +640,12 @@ if #CANADA if2
     patent_title_page_url = "http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/" + params[:number] + "/summary.html?type=number_search"
     patent_renewal_page_url = "http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/" + params[:number] + "/financial_transactions.html?type=number_search"
     
+    logger.info patent_title_page_url + "\n"
+    logger.info patent_renewal_page_url + "\n"
+    
     else
-    patent_page_url = ""
+    patent_title_page_url = ""
+    patent_title_page_url = ""
 end #ends CANADA if2
 
 # First, check if it's a valid page
