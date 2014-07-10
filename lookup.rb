@@ -670,9 +670,19 @@ if #CANADA if3.1
         patent_title_page.parser.xpath("/html/body/div[1]/div/div[6]/div[2]/h2/text()") == "Patent Not Found"
         
         logger.info "Error message returned!\n"
-        error_message = "No title page patent found under that number."
+        error_message = "No title page patent found under that number"
         logger.info "Message: " + error_message + "\n"
         
+        elsif patent_title_page.parser.xpath("/html/body/div[1]/div/div[6]/div[2]/h2/text()") == "Invalid Patent Number"
+        logger.info "Error message returned!\n"
+        error_message = "Invalid Patent Number"
+        logger.info "Message: " + error_message + "\n"
+
+        elsif patent_title_page.parser.xpath("/html/body/div[1]/div/div[6]/div[2]/h2/text()") == "Sorry, you have encountered a fatal server error."
+        logger.info "Error message returned!\n"
+        error_message = "Patent Office Service Error"
+        logger.info "Message: " + error_message + "\n"
+
         else #related to CANADA if4.1
         # No error message, continue to look for data
         logger.info "Title data returned!\n"
