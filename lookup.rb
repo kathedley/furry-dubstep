@@ -787,7 +787,7 @@ if #CANADA if3.1
         
         end #ends CANADA if3.2
         rescue Mechanize::ResponseCodeError, Net::HTTPNotFound #rescue2
-        puts "404!- " + "#{url}"
+        logger.info "404 error on Patent Title Page"
         next
         end
         
@@ -795,7 +795,7 @@ if #CANADA if3.1
     
 end #ends CANADA if3.1
 rescue Mechanize::ResponseCodeError, Net::HTTPNotFound #rescue1
-puts "404!- " + "#{url}"
+logger.info "404 error on Patent Title Page"
 next
 end
 
