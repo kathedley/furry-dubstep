@@ -662,8 +662,7 @@ if #CANADA if3.1
     
     
     #patent_title_page = Nokogiri::HTML(open(patent_title_page_url))
-    
-    patent_title_page = agent.get(patent_title_page_url)
+    #patent_title_page = agent.get(patent_title_page_url)
     
     # Next, check there's a patent found at that address
     if  #CANADA if4.1
