@@ -648,11 +648,12 @@ if #CANADA if2
     patent_renewal_page_url = ""
 end #ends CANADA if2
 
-# First, check if it's a valid page
+# First, open it and check if it's a valid page
 
 #http_status_code = Net::HTTP.get_response(URI.parse(patent_title_page_url)).code
 #logger.info "HTTP Status Code: " + http_status_code + "\n"
 
+begin #rescue 1
 patent_title_page = agent.get(patent_title_page_url)
 http_status_code = patent_title_page.code
 
@@ -662,8 +663,6 @@ if #CANADA if3.1
     
     
     #patent_title_page = Nokogiri::HTML(open(patent_title_page_url))
-    
-    patent_title_page = agent.get(patent_title_page_url)
     
     # Next, check there's a patent found at that address
     if  #CANADA if4.1
@@ -718,8 +717,8 @@ if #CANADA if3.1
         end
 
         # Set up status
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Granted')]]")[0] != nil
-            status = "Granted"
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Patent')]]")[0] != nil
+            status = "Granted Patent"
             logger.info "Status unless changed later: " + status + "\n"
         end
         if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Patent Application')]]")[0] != nil
@@ -727,9 +726,9 @@ if #CANADA if3.1
             logger.info "Status unless changed later: " + status + "\n"
         end
         
-        # Next open renewal page
+        # Next open renewal page and check HTTP status code
+        begin #rescue 2
         patent_renewal_page = agent.get(patent_renewal_page_url)
-        
         renewal_http_status_code = patent_renewal_page.code
         
         if #CANADA if3.2
@@ -787,10 +786,18 @@ if #CANADA if3.1
             end #ends CANADA if4.2
         
         end #ends CANADA if3.2
+        rescue Mechanize::ResponseCodeError, Net::HTTPNotFound #rescue2
+        puts "404!- " + "#{url}"
+        next
+        end
         
     end #ends CANADA if4.1
     
-end #ends CANADA if3
+end #ends CANADA if3.1
+rescue Mechanize::ResponseCodeError, Net::HTTPNotFound #rescue1
+puts "404!- " + "#{url}"
+next
+end
 
 logger.info "Building Canada XML"
 # Build XML
