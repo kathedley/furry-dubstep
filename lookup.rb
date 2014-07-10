@@ -637,6 +637,7 @@ patent_renewal_page_url = ""
 if #CANADA if2
     params[:lookuptype] == "document"
     agent = Mechanize.new
+    agent.user_agent_alias = "Windows IE 8"
     patent_title_page_url = "http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/" + params[:number] + "/summary.html?type=number_search"
     patent_renewal_page_url = "http://brevets-patents.ic.gc.ca/opic-cipo/cpd/eng/patent/" + params[:number] + "/financial_transactions.html?type=number_search"
     
