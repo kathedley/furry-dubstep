@@ -718,8 +718,8 @@ if #CANADA if3.1
         end
 
         # Set up status
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Granted')]]")[0] != nil
-            status = "Granted"
+        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Patent')]]")[0] != nil
+            status = "Granted Patent"
             logger.info "Status unless changed later: " + status + "\n"
         end
         if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Patent Application')]]")[0] != nil
