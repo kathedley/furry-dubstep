@@ -1,0 +1,1084 @@
+# Logfile created on 2014-07-10 10:22:50 +0100 by logger.rb/41954
+I, [2014-07-10T10:22:51.826178 #6475]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/summary.html?type=number_search
+D, [2014-07-10T10:22:51.826279 #6475] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:22:51.826324 #6475] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:22:51.826360 #6475] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:22:51.826394 #6475] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:22:51.826427 #6475] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:22:51.826459 #6475] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:22:52.219278 #6475]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:22:52.219394 #6475] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:22:52.219437 #6475] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:22:52.219475 #6475] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:22:52.219508 #6475] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:22:52.219540 #6475] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:22:52.219572 #6475] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:22:52.219602 #6475] DEBUG -- : response-header: content-length => 30916
+D, [2014-07-10T10:22:52.219633 #6475] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:22:50 GMT
+D, [2014-07-10T10:22:52.219744 #6475] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:22:52.228188 #6475] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:22:52.229936 #6475] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:22:52.230281 #6475] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:22:52.230619 #6475] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:22:52.336539 #6475] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:22:52.342246 #6475] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:22:52.354746 #6475] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:22:52.360243 #6475] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:22:52.365190 #6475] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:22:52.366730 #6475] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:22:52.367646 #6475] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:22:52.461129 #6475] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:22:52.464610 #6475] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:22:52.469307 #6475] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:22:52.479316 #6475] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:22:52.500393 #6475] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:22:52.506126 #6475] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:22:52.516200 #6475] DEBUG -- : Read 5760 bytes (28651 total)
+D, [2014-07-10T10:22:52.581202 #6475] DEBUG -- : Read 1440 bytes (30091 total)
+D, [2014-07-10T10:22:52.586147 #6475] DEBUG -- : Read 825 bytes (30916 total)
+I, [2014-07-10T10:22:52.610154 #6475]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/financial_transactions.html?type=number_search
+D, [2014-07-10T10:22:52.610218 #6475] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:22:52.610252 #6475] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:22:52.610282 #6475] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:22:52.610309 #6475] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:22:52.610335 #6475] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:22:52.610361 #6475] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:22:53.748917 #6475]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:22:53.749031 #6475] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:22:53.749075 #6475] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:22:53.749111 #6475] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:22:53.749146 #6475] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:22:53.749179 #6475] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:22:53.749211 #6475] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:22:53.749242 #6475] DEBUG -- : response-header: content-length => 24813
+D, [2014-07-10T10:22:53.749274 #6475] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:22:52 GMT
+D, [2014-07-10T10:22:53.749379 #6475] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:22:53.762717 #6475] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:22:53.766580 #6475] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:22:53.775665 #6475] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:22:53.799047 #6475] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:22:53.799204 #6475] DEBUG -- : Read 2880 bytes (7051 total)
+D, [2014-07-10T10:22:53.799855 #6475] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:22:53.805157 #6475] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:22:53.807788 #6475] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:22:53.810261 #6475] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:22:53.814806 #6475] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:22:53.815873 #6475] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:22:53.818565 #6475] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:22:53.821279 #6475] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:22:53.830251 #6475] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:22:53.839477 #6475] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:22:53.842102 #6475] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:22:53.844820 #6475] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:22:53.849059 #6475] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:22:53.853442 #6475] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:22:53.856154 #6475] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:22:53.862090 #6475] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:22:53.863001 #6475] DEBUG -- : Read 350 bytes (24813 total)
+I, [2014-07-10T10:31:40.165067 #6496]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/summary.html?type=number_search
+D, [2014-07-10T10:31:40.165119 #6496] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:31:40.165142 #6496] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:31:40.165161 #6496] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:31:40.165178 #6496] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:31:40.165195 #6496] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:31:40.165211 #6496] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:31:40.486581 #6496]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:31:40.486727 #6496] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:31:40.486764 #6496] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:31:40.486793 #6496] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:31:40.486820 #6496] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:31:40.486846 #6496] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:31:40.486872 #6496] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:31:40.486936 #6496] DEBUG -- : response-header: content-length => 30916
+D, [2014-07-10T10:31:40.486968 #6496] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:31:40 GMT
+D, [2014-07-10T10:31:40.487135 #6496] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:31:40.494396 #6496] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:31:40.496360 #6496] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:31:40.500115 #6496] DEBUG -- : Read 1291 bytes (4171 total)
+D, [2014-07-10T10:31:40.598540 #6496] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:31:40.603462 #6496] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:31:40.609465 #6496] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:31:40.612151 #6496] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:31:40.614078 #6496] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:31:40.618844 #6496] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:31:40.621717 #6496] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:31:40.622938 #6496] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:31:40.715568 #6496] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:31:40.716901 #6496] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:31:40.722737 #6496] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:31:40.723765 #6496] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:31:40.724920 #6496] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:31:40.727885 #6496] DEBUG -- : Read 1440 bytes (24331 total)
+D, [2014-07-10T10:31:40.734220 #6496] DEBUG -- : Read 1440 bytes (25771 total)
+D, [2014-07-10T10:31:40.735698 #6496] DEBUG -- : Read 1440 bytes (27211 total)
+D, [2014-07-10T10:31:40.736555 #6496] DEBUG -- : Read 1440 bytes (28651 total)
+D, [2014-07-10T10:31:40.740961 #6496] DEBUG -- : Read 1440 bytes (30091 total)
+D, [2014-07-10T10:31:40.742576 #6496] DEBUG -- : Read 825 bytes (30916 total)
+I, [2014-07-10T10:31:40.748813 #6496]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/summary.html?type=number_search
+D, [2014-07-10T10:31:40.748890 #6496] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:31:40.748924 #6496] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:31:40.748953 #6496] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:31:40.748980 #6496] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:31:40.749006 #6496] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:31:40.749032 #6496] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:31:40.913468 #6496]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:31:40.913586 #6496] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:31:40.913629 #6496] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:31:40.913665 #6496] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:31:40.913698 #6496] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:31:40.913731 #6496] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:31:40.913763 #6496] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:31:40.913794 #6496] DEBUG -- : response-header: content-length => 30916
+D, [2014-07-10T10:31:40.913826 #6496] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:31:40 GMT
+D, [2014-07-10T10:31:40.913929 #6496] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:31:40.922794 #6496] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:31:40.926920 #6496] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:31:40.928992 #6496] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:31:40.929184 #6496] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:31:40.931258 #6496] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:31:40.936906 #6496] DEBUG -- : Read 2904 bytes (8515 total)
+D, [2014-07-10T10:31:40.940515 #6496] DEBUG -- : Read 2880 bytes (11395 total)
+D, [2014-07-10T10:31:40.942283 #6496] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:31:40.944670 #6496] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:31:40.952188 #6496] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:31:40.954147 #6496] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:31:40.954633 #6496] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:31:40.956283 #6496] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:31:40.965216 #6496] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:31:40.968160 #6496] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:31:40.970784 #6496] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:31:40.970985 #6496] DEBUG -- : Read 460 bytes (21619 total)
+D, [2014-07-10T10:31:40.973289 #6496] DEBUG -- : Read 1440 bytes (23059 total)
+D, [2014-07-10T10:31:40.974283 #6496] DEBUG -- : Read 1440 bytes (24499 total)
+D, [2014-07-10T10:31:40.977250 #6496] DEBUG -- : Read 1464 bytes (25963 total)
+D, [2014-07-10T10:31:40.983325 #6496] DEBUG -- : Read 1440 bytes (27403 total)
+D, [2014-07-10T10:31:40.984263 #6496] DEBUG -- : Read 1440 bytes (28843 total)
+D, [2014-07-10T10:31:40.984871 #6496] DEBUG -- : Read 1040 bytes (29883 total)
+D, [2014-07-10T10:31:41.025356 #6496] DEBUG -- : Read 1033 bytes (30916 total)
+I, [2014-07-10T10:31:41.038990 #6496]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/financial_transactions.html?type=number_search
+D, [2014-07-10T10:31:41.039043 #6496] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:31:41.039068 #6496] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:31:41.039089 #6496] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:31:41.039109 #6496] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:31:41.039127 #6496] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:31:41.039146 #6496] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:31:41.256832 #6496]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:31:41.256990 #6496] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:31:41.281226 #6496] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:31:41.281354 #6496] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:31:41.281387 #6496] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:31:41.281411 #6496] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:31:41.281433 #6496] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:31:41.281455 #6496] DEBUG -- : response-header: content-length => 24813
+D, [2014-07-10T10:31:41.281476 #6496] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:31:41 GMT
+D, [2014-07-10T10:31:41.281573 #6496] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:31:41.281650 #6496] DEBUG -- : Read 8515 bytes (8515 total)
+D, [2014-07-10T10:31:41.288511 #6496] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:31:41.290448 #6496] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:31:41.292080 #6496] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:31:41.292537 #6496] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:31:41.295427 #6496] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:31:41.297289 #6496] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:31:41.298864 #6496] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:31:41.299363 #6496] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:31:41.303708 #6496] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:31:41.305458 #6496] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:31:41.315111 #6496] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:31:41.315624 #6496] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:31:41.321622 #6496] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:31:41.323619 #6496] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:31:41.323880 #6496] DEBUG -- : Read 350 bytes (24813 total)
+I, [2014-07-10T10:37:28.550474 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/summary.html?type=number_search
+D, [2014-07-10T10:37:28.550541 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:37:28.550571 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:37:28.550593 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:37:28.550622 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:37:28.550639 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:37:28.550656 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:37:28.873816 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:37:28.873933 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:37:28.873978 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:37:28.874015 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:37:28.874049 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:37:28.874081 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:37:28.874113 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:37:28.874144 #6512] DEBUG -- : response-header: content-length => 30916
+D, [2014-07-10T10:37:28.874176 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:37:28 GMT
+D, [2014-07-10T10:37:28.874313 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:37:28.884775 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:37:28.886248 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:37:28.886385 #6512] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:37:28.887863 #6512] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:37:28.994798 #6512] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:37:28.996627 #6512] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:37:29.001274 #6512] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:37:29.003513 #6512] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:37:29.006037 #6512] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:37:29.012792 #6512] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:37:29.013375 #6512] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:37:29.109906 #6512] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:37:29.115072 #6512] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:37:29.115911 #6512] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:37:29.125493 #6512] DEBUG -- : Read 2880 bytes (21451 total)
+D, [2014-07-10T10:37:29.126664 #6512] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:37:29.127141 #6512] DEBUG -- : Read 1440 bytes (24331 total)
+D, [2014-07-10T10:37:29.127991 #6512] DEBUG -- : Read 1440 bytes (25771 total)
+D, [2014-07-10T10:37:29.128949 #6512] DEBUG -- : Read 1440 bytes (27211 total)
+D, [2014-07-10T10:37:29.130700 #6512] DEBUG -- : Read 1440 bytes (28651 total)
+D, [2014-07-10T10:37:29.222406 #6512] DEBUG -- : Read 1440 bytes (30091 total)
+D, [2014-07-10T10:37:29.223370 #6512] DEBUG -- : Read 825 bytes (30916 total)
+I, [2014-07-10T10:37:29.228160 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/summary.html?type=number_search
+D, [2014-07-10T10:37:29.228218 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:37:29.228271 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:37:29.228299 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:37:29.228322 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:37:29.228345 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:37:29.228366 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:37:29.482576 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:37:29.482692 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:37:29.482735 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:37:29.482769 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:37:29.482801 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:37:29.482834 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:37:29.482866 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:37:29.482897 #6512] DEBUG -- : response-header: content-length => 30916
+D, [2014-07-10T10:37:29.482927 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:37:29 GMT
+D, [2014-07-10T10:37:29.483072 #6512] DEBUG -- : Read 16119 bytes (16119 total)
+D, [2014-07-10T10:37:29.483148 #6512] DEBUG -- : Read 1120 bytes (17239 total)
+D, [2014-07-10T10:37:29.485126 #6512] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:37:29.485625 #6512] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:37:29.486064 #6512] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:37:29.486221 #6512] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:37:29.486895 #6512] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:37:29.487719 #6512] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:37:29.488002 #6512] DEBUG -- : Read 1076 bytes (25539 total)
+D, [2014-07-10T10:37:29.488262 #6512] DEBUG -- : Read 424 bytes (25963 total)
+D, [2014-07-10T10:37:29.599090 #6512] DEBUG -- : Read 1440 bytes (27403 total)
+D, [2014-07-10T10:37:29.600511 #6512] DEBUG -- : Read 1440 bytes (28843 total)
+D, [2014-07-10T10:37:29.601018 #6512] DEBUG -- : Read 1440 bytes (30283 total)
+D, [2014-07-10T10:37:29.602262 #6512] DEBUG -- : Read 633 bytes (30916 total)
+I, [2014-07-10T10:37:29.615648 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582863/financial_transactions.html?type=number_search
+D, [2014-07-10T10:37:29.615707 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:37:29.615729 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:37:29.615747 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:37:29.615765 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:37:29.615782 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:37:29.615798 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:37:30.087500 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:37:30.087615 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:37:30.087660 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:37:30.087696 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:37:30.087729 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:37:30.087761 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:37:30.087793 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:37:30.087824 #6512] DEBUG -- : response-header: content-length => 24813
+D, [2014-07-10T10:37:30.087888 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:37:29 GMT
+D, [2014-07-10T10:37:30.087984 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:37:30.088046 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:37:30.088855 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:37:30.089180 #6512] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:37:30.089542 #6512] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:37:30.097196 #6512] DEBUG -- : Read 2880 bytes (7051 total)
+D, [2014-07-10T10:37:30.097413 #6512] DEBUG -- : Read 5420 bytes (12471 total)
+D, [2014-07-10T10:37:30.097533 #6512] DEBUG -- : Read 4768 bytes (17239 total)
+D, [2014-07-10T10:37:30.100468 #6512] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:37:30.100738 #6512] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:37:30.123791 #6512] DEBUG -- : Read 4694 bytes (24813 total)
+I, [2014-07-10T10:41:38.789998 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/summary.html?type=number_search
+D, [2014-07-10T10:41:38.790364 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:41:38.790409 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:41:38.790436 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:41:38.790459 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:41:38.790479 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:41:38.790498 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:41:39.200702 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:41:39.200827 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:41:39.200872 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:41:39.200910 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:41:39.200946 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:41:39.200981 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:41:39.201016 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:41:39.201050 #6512] DEBUG -- : response-header: content-length => 31867
+D, [2014-07-10T10:41:39.201083 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:41:38 GMT
+D, [2014-07-10T10:41:39.201235 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:41:39.208518 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:41:39.210014 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:41:39.212466 #6512] DEBUG -- : Read 1291 bytes (4171 total)
+D, [2014-07-10T10:41:39.312659 #6512] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:41:39.313657 #6512] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:41:39.322407 #6512] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:41:39.324427 #6512] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:41:39.327331 #6512] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:41:39.328694 #6512] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:41:39.332332 #6512] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:41:39.334802 #6512] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:41:39.426951 #6512] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:41:39.428665 #6512] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:41:39.430972 #6512] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:41:39.436722 #6512] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:41:39.437333 #6512] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:41:39.439186 #6512] DEBUG -- : Read 1440 bytes (24331 total)
+D, [2014-07-10T10:41:39.440984 #6512] DEBUG -- : Read 1440 bytes (25771 total)
+D, [2014-07-10T10:41:39.449507 #6512] DEBUG -- : Read 4320 bytes (30091 total)
+D, [2014-07-10T10:41:39.450000 #6512] DEBUG -- : Read 1440 bytes (31531 total)
+D, [2014-07-10T10:41:39.452740 #6512] DEBUG -- : Read 336 bytes (31867 total)
+I, [2014-07-10T10:41:39.457791 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/summary.html?type=number_search
+D, [2014-07-10T10:41:39.457853 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:41:39.457883 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:41:39.457908 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:41:39.457931 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:41:39.457953 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:41:39.457976 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:41:39.614527 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:41:39.614616 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:41:39.614703 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:41:39.614737 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:41:39.614762 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:41:39.614785 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:41:39.614807 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:41:39.614831 #6512] DEBUG -- : response-header: content-length => 31867
+D, [2014-07-10T10:41:39.614852 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:41:38 GMT
+D, [2014-07-10T10:41:39.614929 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:41:39.623364 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:41:39.636052 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:41:39.639568 #6512] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:41:39.639701 #6512] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:41:39.640810 #6512] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:41:39.642444 #6512] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:41:39.643256 #6512] DEBUG -- : Read 1464 bytes (8515 total)
+D, [2014-07-10T10:41:39.645062 #6512] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:41:39.646785 #6512] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:41:39.651273 #6512] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:41:39.653533 #6512] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:41:39.654560 #6512] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:41:39.656936 #6512] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:41:39.657590 #6512] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:41:39.657765 #6512] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:41:39.661610 #6512] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:41:39.663639 #6512] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:41:39.664161 #6512] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:41:39.664449 #6512] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:41:39.667445 #6512] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:41:39.668429 #6512] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:41:39.672973 #6512] DEBUG -- : Read 1076 bytes (25539 total)
+D, [2014-07-10T10:41:39.673201 #6512] DEBUG -- : Read 424 bytes (25963 total)
+D, [2014-07-10T10:41:39.674272 #6512] DEBUG -- : Read 1440 bytes (27403 total)
+D, [2014-07-10T10:41:39.676085 #6512] DEBUG -- : Read 1440 bytes (28843 total)
+D, [2014-07-10T10:41:39.676479 #6512] DEBUG -- : Read 1040 bytes (29883 total)
+D, [2014-07-10T10:41:39.758177 #6512] DEBUG -- : Read 1440 bytes (31323 total)
+D, [2014-07-10T10:41:39.759452 #6512] DEBUG -- : Read 544 bytes (31867 total)
+I, [2014-07-10T10:41:39.772619 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/financial_transactions.html?type=number_search
+D, [2014-07-10T10:41:39.772692 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:41:39.772723 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:41:39.772762 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:41:39.772782 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:41:39.772801 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:41:39.772820 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:41:40.152670 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:41:40.152822 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:41:40.152873 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:41:40.152911 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:41:40.152945 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:41:40.152977 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:41:40.153009 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:41:40.153039 #6512] DEBUG -- : response-header: content-length => 23337
+D, [2014-07-10T10:41:40.153072 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:41:39 GMT
+D, [2014-07-10T10:41:40.153213 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:41:40.153281 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:41:40.167693 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:41:40.168502 #6512] DEBUG -- : Read 8515 bytes (11395 total)
+D, [2014-07-10T10:41:40.168679 #6512] DEBUG -- : Read 4380 bytes (15775 total)
+D, [2014-07-10T10:41:40.173179 #6512] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:41:40.173486 #6512] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:41:40.181776 #6512] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:41:40.182454 #6512] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:41:40.183224 #6512] DEBUG -- : Read 3218 bytes (23337 total)
+I, [2014-07-10T10:47:22.017789 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/summary.html?type=number_search
+D, [2014-07-10T10:47:22.017910 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:47:22.017959 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:47:22.018001 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:47:22.018040 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:47:22.018077 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:47:22.018112 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:47:22.998816 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:47:22.998979 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:47:22.999067 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:47:22.999147 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:47:22.999218 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:47:22.999284 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:47:22.999350 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:47:22.999415 #6512] DEBUG -- : response-header: content-length => 31867
+D, [2014-07-10T10:47:22.999479 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:47:21 GMT
+D, [2014-07-10T10:47:22.999743 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:47:23.004027 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:47:23.069964 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:47:23.071769 #6512] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:47:23.086823 #6512] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:47:23.458106 #6512] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:47:23.477366 #6512] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:47:23.486624 #6512] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:47:23.548669 #6512] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:47:23.589504 #6512] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:47:23.667004 #6512] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:47:24.377158 #6512] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:47:24.450312 #6512] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:47:24.548591 #6512] DEBUG -- : Read 10080 bytes (25771 total)
+D, [2014-07-10T10:47:25.256619 #6512] DEBUG -- : Read 1440 bytes (27211 total)
+D, [2014-07-10T10:47:25.323631 #6512] DEBUG -- : Read 1440 bytes (28651 total)
+D, [2014-07-10T10:47:25.414025 #6512] DEBUG -- : Read 1440 bytes (30091 total)
+D, [2014-07-10T10:47:25.490302 #6512] DEBUG -- : Read 1440 bytes (31531 total)
+D, [2014-07-10T10:47:25.566651 #6512] DEBUG -- : Read 336 bytes (31867 total)
+I, [2014-07-10T10:47:25.573625 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/summary.html?type=number_search
+D, [2014-07-10T10:47:25.573708 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:47:25.573751 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:47:25.573786 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:47:25.573820 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:47:25.573853 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:47:25.573885 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:47:26.668779 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:47:26.668929 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:47:26.668978 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:47:26.669014 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:47:26.669048 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:47:26.669082 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:47:26.669114 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:47:26.669145 #6512] DEBUG -- : response-header: content-length => 31867
+D, [2014-07-10T10:47:26.669177 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:47:25 GMT
+D, [2014-07-10T10:47:26.669298 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:47:26.674946 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:47:26.685516 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:47:26.687255 #6512] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:47:26.691437 #6512] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:47:26.699212 #6512] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:47:26.708410 #6512] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:47:26.710321 #6512] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:47:26.714111 #6512] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:47:26.716493 #6512] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:47:26.718927 #6512] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:47:26.720965 #6512] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:47:26.723240 #6512] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:47:26.726981 #6512] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:47:26.749312 #6512] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:47:26.751199 #6512] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:47:26.755484 #6512] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:47:26.760862 #6512] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:47:26.763641 #6512] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:47:26.827530 #6512] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:47:27.056419 #6512] DEBUG -- : Read 1440 bytes (22599 total)
+D, [2014-07-10T10:47:27.076017 #6512] DEBUG -- : Read 1440 bytes (24039 total)
+D, [2014-07-10T10:47:27.078428 #6512] DEBUG -- : Read 1440 bytes (25479 total)
+D, [2014-07-10T10:47:27.147881 #6512] DEBUG -- : Read 1440 bytes (26919 total)
+D, [2014-07-10T10:47:27.156385 #6512] DEBUG -- : Read 1440 bytes (28359 total)
+D, [2014-07-10T10:47:27.158798 #6512] DEBUG -- : Read 1440 bytes (29799 total)
+D, [2014-07-10T10:47:27.164387 #6512] DEBUG -- : Read 1440 bytes (31239 total)
+D, [2014-07-10T10:47:27.165913 #6512] DEBUG -- : Read 628 bytes (31867 total)
+I, [2014-07-10T10:47:27.178433 #6512]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/financial_transactions.html?type=number_search
+D, [2014-07-10T10:47:27.178499 #6512] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:47:27.178530 #6512] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:47:27.178555 #6512] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:47:27.178579 #6512] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:47:27.178601 #6512] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:47:27.178623 #6512] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:47:27.433320 #6512]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:47:27.433435 #6512] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:47:27.433477 #6512] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:47:27.433514 #6512] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:47:27.433548 #6512] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:47:27.433581 #6512] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:47:27.433612 #6512] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:47:27.433643 #6512] DEBUG -- : response-header: content-length => 23337
+D, [2014-07-10T10:47:27.433674 #6512] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:47:26 GMT
+D, [2014-07-10T10:47:27.433765 #6512] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:47:27.446221 #6512] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:47:27.449217 #6512] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:47:27.459004 #6512] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:47:27.501011 #6512] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:47:27.525608 #6512] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:47:27.571613 #6512] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:47:27.573509 #6512] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:47:27.574523 #6512] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:47:27.583310 #6512] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:47:27.646145 #6512] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:47:27.652686 #6512] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:47:27.653832 #6512] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:47:27.659684 #6512] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:47:27.662273 #6512] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:47:27.664542 #6512] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:47:27.665631 #6512] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:47:27.673849 #6512] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:47:27.676377 #6512] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:47:27.681486 #6512] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:47:29.542109 #6512] DEBUG -- : Read 1440 bytes (22599 total)
+D, [2014-07-10T10:47:30.028217 #6512] DEBUG -- : Read 738 bytes (23337 total)
+I, [2014-07-10T10:47:36.299317 #6537]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/summary.html?type=number_search
+D, [2014-07-10T10:47:36.299374 #6537] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:47:36.299399 #6537] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:47:36.299418 #6537] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:47:36.299437 #6537] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:47:36.299454 #6537] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:47:36.299471 #6537] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:47:36.630885 #6537]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:47:36.631001 #6537] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:47:36.631046 #6537] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:47:36.631083 #6537] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:47:36.631115 #6537] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:47:36.631147 #6537] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:47:36.631180 #6537] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:47:36.631211 #6537] DEBUG -- : response-header: content-length => 31867
+D, [2014-07-10T10:47:36.631243 #6537] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:47:36 GMT
+D, [2014-07-10T10:47:36.631389 #6537] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:47:36.641616 #6537] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:47:36.651237 #6537] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:47:36.715132 #6537] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:47:36.731608 #6537] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:47:36.874200 #6537] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:47:36.942490 #6537] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:47:37.011356 #6537] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:47:37.078978 #6537] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:47:37.087104 #6537] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:47:37.089603 #6537] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:47:37.164877 #6537] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:47:37.167598 #6537] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:47:37.236779 #6537] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:47:37.249728 #6537] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:47:37.255333 #6537] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:47:37.384685 #6537] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:47:37.406729 #6537] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:47:37.464758 #6537] DEBUG -- : Read 7200 bytes (30091 total)
+D, [2014-07-10T10:47:37.507293 #6537] DEBUG -- : Read 1776 bytes (31867 total)
+I, [2014-07-10T10:47:37.513820 #6537]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/summary.html?type=number_search
+D, [2014-07-10T10:47:37.513923 #6537] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:47:37.513990 #6537] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:47:37.514053 #6537] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:47:37.514167 #6537] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:47:37.514238 #6537] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:47:37.514305 #6537] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:47:37.731903 #6537]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:47:37.732015 #6537] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:47:37.732059 #6537] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:47:37.732099 #6537] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:47:37.732229 #6537] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:47:37.732271 #6537] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:47:37.732310 #6537] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:47:37.732349 #6537] DEBUG -- : response-header: content-length => 31867
+D, [2014-07-10T10:47:37.732396 #6537] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:47:37 GMT
+D, [2014-07-10T10:47:37.732516 #6537] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:47:37.754473 #6537] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:47:37.841181 #6537] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:47:37.920527 #6537] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:47:37.921569 #6537] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:47:37.924462 #6537] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:47:37.930035 #6537] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:47:37.932045 #6537] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:47:37.933149 #6537] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:47:37.947784 #6537] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:47:38.020131 #6537] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:47:38.030695 #6537] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:47:38.031922 #6537] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:47:38.035590 #6537] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:47:38.045252 #6537] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:47:38.049187 #6537] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:47:38.121617 #6537] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:47:38.146084 #6537] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:47:38.157864 #6537] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:47:38.176797 #6537] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:47:38.177910 #6537] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:47:38.212311 #6537] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:47:38.440366 #6537] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:47:38.527070 #6537] DEBUG -- : Read 1440 bytes (25903 total)
+D, [2014-07-10T10:47:38.532893 #6537] DEBUG -- : Read 1440 bytes (27343 total)
+D, [2014-07-10T10:47:38.571320 #6537] DEBUG -- : Read 1440 bytes (28783 total)
+D, [2014-07-10T10:47:38.576425 #6537] DEBUG -- : Read 1440 bytes (30223 total)
+D, [2014-07-10T10:47:38.645118 #6537] DEBUG -- : Read 1440 bytes (31663 total)
+D, [2014-07-10T10:47:38.658224 #6537] DEBUG -- : Read 204 bytes (31867 total)
+I, [2014-07-10T10:47:38.671224 #6537]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2582864/financial_transactions.html?type=number_search
+D, [2014-07-10T10:47:38.671282 #6537] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:47:38.671311 #6537] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:47:38.671336 #6537] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:47:38.671360 #6537] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:47:38.671407 #6537] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:47:38.671433 #6537] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:47:39.141245 #6537]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:47:39.141360 #6537] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:47:39.141403 #6537] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:47:39.141438 #6537] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:47:39.141472 #6537] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:47:39.141520 #6537] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:47:39.141552 #6537] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:47:39.141583 #6537] DEBUG -- : response-header: content-length => 23337
+D, [2014-07-10T10:47:39.141615 #6537] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:47:38 GMT
+D, [2014-07-10T10:47:39.141707 #6537] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:47:39.152443 #6537] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:47:39.154994 #6537] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:47:39.157187 #6537] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:47:39.157661 #6537] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:47:39.160626 #6537] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:47:39.194775 #6537] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:47:39.196193 #6537] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:47:39.196667 #6537] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:47:39.220171 #6537] DEBUG -- : Read 7260 bytes (15775 total)
+D, [2014-07-10T10:47:39.230385 #6537] DEBUG -- : Read 7248 bytes (23023 total)
+D, [2014-07-10T10:47:39.232251 #6537] DEBUG -- : Read 314 bytes (23337 total)
+I, [2014-07-10T10:50:43.408802 #6537]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:50:43.408893 #6537] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:50:43.408925 #6537] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:50:43.408952 #6537] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:50:43.408976 #6537] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:50:43.408999 #6537] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:50:43.409021 #6537] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:50:44.629367 #6537]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:50:44.629474 #6537] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:50:44.629506 #6537] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:50:44.629531 #6537] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:50:44.629555 #6537] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:50:44.629577 #6537] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:50:44.629599 #6537] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:50:44.629621 #6537] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:50:44.629642 #6537] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:50:44 GMT
+D, [2014-07-10T10:50:44.629747 #6537] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:50:44.709934 #6537] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:50:44.712807 #6537] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:50:44.716881 #6537] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:50:44.718178 #6537] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:50:44.790284 #6537] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:50:44.836666 #6537] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:50:44.887212 #6537] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:50:44.921856 #6537] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:50:44.924637 #6537] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:50:44.927247 #6537] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:50:44.932246 #6537] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:50:45.079616 #6537] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:50:45.126350 #6537] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:50:45.129045 #6537] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:50:45.167784 #6537] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:50:45.226092 #6537] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:50:45.228598 #6537] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:50:45.231322 #6537] DEBUG -- : Read 1440 bytes (24331 total)
+D, [2014-07-10T10:50:45.239020 #6537] DEBUG -- : Read 1440 bytes (25771 total)
+D, [2014-07-10T10:50:45.241559 #6537] DEBUG -- : Read 1440 bytes (27211 total)
+D, [2014-07-10T10:50:45.786317 #6537] DEBUG -- : Read 1440 bytes (28651 total)
+D, [2014-07-10T10:50:45.790018 #6537] DEBUG -- : Read 1440 bytes (30091 total)
+D, [2014-07-10T10:50:45.792812 #6537] DEBUG -- : Read 1440 bytes (31531 total)
+D, [2014-07-10T10:50:45.800556 #6537] DEBUG -- : Read 719 bytes (32250 total)
+I, [2014-07-10T10:50:45.805541 #6537]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:50:45.805615 #6537] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:50:45.805644 #6537] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:50:45.805669 #6537] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:50:45.805692 #6537] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:50:45.805714 #6537] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:50:45.805736 #6537] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:50:46.003279 #6537]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:50:46.003396 #6537] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:50:46.003440 #6537] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:50:46.003476 #6537] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:50:46.003509 #6537] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:50:46.003540 #6537] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:50:46.003572 #6537] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:50:46.003603 #6537] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:50:46.003633 #6537] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:50:45 GMT
+D, [2014-07-10T10:50:46.003735 #6537] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:50:46.023825 #6537] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:50:46.029643 #6537] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:50:46.034461 #6537] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:50:46.035472 #6537] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:50:46.037850 #6537] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:50:46.040398 #6537] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:50:46.054998 #6537] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:50:46.061164 #6537] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:50:46.063627 #6537] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:50:46.069213 #6537] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:50:46.633826 #6537] DEBUG -- : Read 1440 bytes (12835 total)
+D, [2014-07-10T10:50:46.747077 #6537] DEBUG -- : Read 1440 bytes (14275 total)
+D, [2014-07-10T10:50:46.884270 #6537] DEBUG -- : Read 16384 bytes (30659 total)
+D, [2014-07-10T10:50:46.884403 #6537] DEBUG -- : Read 1591 bytes (32250 total)
+I, [2014-07-10T10:50:46.896482 #6537]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/financial_transactions.html?type=number_search
+D, [2014-07-10T10:50:46.896539 #6537] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:50:46.896568 #6537] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:50:46.896594 #6537] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:50:46.896618 #6537] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:50:46.896641 #6537] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:50:46.896663 #6537] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:50:47.172092 #6537]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:50:47.172203 #6537] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:50:47.172247 #6537] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:50:47.172284 #6537] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:50:47.172319 #6537] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:50:47.172351 #6537] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:50:47.172382 #6537] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:50:47.172413 #6537] DEBUG -- : response-header: content-length => 26767
+D, [2014-07-10T10:50:47.172445 #6537] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:50:46 GMT
+D, [2014-07-10T10:50:47.172535 #6537] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:50:47.182989 #6537] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:50:47.185801 #6537] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:50:47.187598 #6537] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:50:47.188484 #6537] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:50:47.191390 #6537] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:50:47.194080 #6537] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:50:47.196171 #6537] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:50:47.197188 #6537] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:50:47.204410 #6537] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:50:47.206945 #6537] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:50:47.209207 #6537] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:50:47.264788 #6537] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:50:47.267109 #6537] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:50:47.272930 #6537] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:50:47.274798 #6537] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:50:47.282153 #6537] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:50:47.286621 #6537] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:50:47.289174 #6537] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:50:47.296199 #6537] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:50:47.298836 #6537] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:50:47.304197 #6537] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:50:47.312109 #6537] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:50:47.314734 #6537] DEBUG -- : Read 1440 bytes (25903 total)
+D, [2014-07-10T10:50:47.316826 #6537] DEBUG -- : Read 864 bytes (26767 total)
+I, [2014-07-10T10:53:31.819546 #6548]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:53:31.819603 #6548] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:53:31.819644 #6548] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:53:31.819668 #6548] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:53:31.819688 #6548] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:53:31.819707 #6548] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:53:31.819733 #6548] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:53:32.148104 #6548]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:53:32.148218 #6548] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:53:32.148262 #6548] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:53:32.148298 #6548] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:53:32.148331 #6548] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:53:32.148364 #6548] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:53:32.148394 #6548] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:53:32.148425 #6548] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:53:32.148465 #6548] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:53:31 GMT
+D, [2014-07-10T10:53:32.148543 #6548] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:53:32.163142 #6548] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:53:32.172577 #6548] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:53:32.233561 #6548] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:53:32.234474 #6548] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:53:32.654075 #6548] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:53:32.666889 #6548] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:53:32.669551 #6548] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:53:35.274525 #6548] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:53:37.259387 #6548] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:53:37.264656 #6548] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:53:37.383261 #6548] DEBUG -- : Read 8700 bytes (21511 total)
+D, [2014-07-10T10:53:37.541438 #6548] DEBUG -- : Read 1440 bytes (22951 total)
+D, [2014-07-10T10:53:37.608082 #6548] DEBUG -- : Read 1440 bytes (24391 total)
+D, [2014-07-10T10:53:37.609979 #6548] DEBUG -- : Read 1440 bytes (25831 total)
+D, [2014-07-10T10:53:37.612020 #6548] DEBUG -- : Read 1440 bytes (27271 total)
+D, [2014-07-10T10:53:37.745235 #6548] DEBUG -- : Read 1440 bytes (28711 total)
+D, [2014-07-10T10:53:37.747857 #6548] DEBUG -- : Read 1440 bytes (30151 total)
+D, [2014-07-10T10:53:37.829763 #6548] DEBUG -- : Read 1440 bytes (31591 total)
+D, [2014-07-10T10:53:37.839474 #6548] DEBUG -- : Read 659 bytes (32250 total)
+I, [2014-07-10T10:53:37.846466 #6548]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:53:37.846598 #6548] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:53:37.846663 #6548] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:53:37.846702 #6548] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:53:37.846737 #6548] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:53:37.846770 #6548] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:53:37.846801 #6548] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:53:38.366712 #6548]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:53:38.366827 #6548] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:53:38.366870 #6548] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:53:38.366905 #6548] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:53:38.366970 #6548] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:53:38.367008 #6548] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:53:38.367039 #6548] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:53:38.367068 #6548] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:53:38.367099 #6548] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:53:37 GMT
+D, [2014-07-10T10:53:38.367189 #6548] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:53:38.377908 #6548] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:53:38.385808 #6548] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:53:38.389453 #6548] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:53:38.390651 #6548] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:53:38.507870 #6548] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:53:38.577329 #6548] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:53:38.582864 #6548] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:53:38.585227 #6548] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:53:38.627220 #6548] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:53:38.695708 #6548] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:53:38.698000 #6548] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:53:38.710222 #6548] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:53:38.715565 #6548] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:53:38.718209 #6548] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:53:38.720705 #6548] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:53:38.729081 #6548] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:53:38.751148 #6548] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:53:38.818704 #6548] DEBUG -- : Read 1440 bytes (24331 total)
+D, [2014-07-10T10:53:38.821163 #6548] DEBUG -- : Read 1440 bytes (25771 total)
+D, [2014-07-10T10:53:38.936331 #6548] DEBUG -- : Read 1440 bytes (27211 total)
+D, [2014-07-10T10:53:38.991837 #6548] DEBUG -- : Read 1440 bytes (28651 total)
+D, [2014-07-10T10:53:38.993508 #6548] DEBUG -- : Read 1440 bytes (30091 total)
+D, [2014-07-10T10:53:38.995703 #6548] DEBUG -- : Read 1440 bytes (31531 total)
+D, [2014-07-10T10:53:38.996518 #6548] DEBUG -- : Read 719 bytes (32250 total)
+I, [2014-07-10T10:53:39.005784 #6548]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/financial_transactions.html?type=number_search
+D, [2014-07-10T10:53:39.005829 #6548] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:53:39.005850 #6548] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:53:39.005869 #6548] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:53:39.005886 #6548] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:53:39.005902 #6548] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:53:39.005918 #6548] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:53:39.320726 #6548]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:53:39.320840 #6548] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:53:39.320882 #6548] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:53:39.320917 #6548] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:53:39.320949 #6548] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:53:39.320981 #6548] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:53:39.321011 #6548] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:53:39.321042 #6548] DEBUG -- : response-header: content-length => 26767
+D, [2014-07-10T10:53:39.321072 #6548] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:53:38 GMT
+D, [2014-07-10T10:53:39.321208 #6548] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:53:39.340837 #6548] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:53:39.403509 #6548] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:53:39.412743 #6548] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:53:39.414046 #6548] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:53:39.417675 #6548] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:53:39.425205 #6548] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:53:39.427196 #6548] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:53:39.430363 #6548] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:53:39.435628 #6548] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:53:39.505922 #6548] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:53:39.507789 #6548] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:53:39.508793 #6548] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:53:39.513898 #6548] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:53:39.516644 #6548] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:53:39.518548 #6548] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:53:39.519743 #6548] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:53:39.522344 #6548] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:53:39.530209 #6548] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:53:39.532500 #6548] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:53:39.533610 #6548] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:53:39.536127 #6548] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:53:39.615408 #6548] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:53:39.618399 #6548] DEBUG -- : Read 1440 bytes (25903 total)
+D, [2014-07-10T10:53:39.620284 #6548] DEBUG -- : Read 864 bytes (26767 total)
+I, [2014-07-10T10:54:45.157746 #6550]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:54:45.157795 #6550] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:54:45.157817 #6550] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:54:45.157836 #6550] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:54:45.157853 #6550] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:54:45.157870 #6550] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:54:45.157886 #6550] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:54:50.041188 #6550]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:54:50.041302 #6550] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:54:50.041347 #6550] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:54:50.041383 #6550] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:54:50.041416 #6550] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:54:50.041449 #6550] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:54:50.041481 #6550] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:54:50.041512 #6550] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:54:50.041542 #6550] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:54:49 GMT
+D, [2014-07-10T10:54:50.041676 #6550] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:54:50.059429 #6550] DEBUG -- : Read 1428 bytes (1428 total)
+D, [2014-07-10T10:54:50.062229 #6550] DEBUG -- : Read 1428 bytes (2856 total)
+D, [2014-07-10T10:54:50.063808 #6550] DEBUG -- : Read 891 bytes (3747 total)
+D, [2014-07-10T10:54:50.079375 #6550] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:54:50.723075 #6550] DEBUG -- : Read 1428 bytes (5599 total)
+D, [2014-07-10T10:54:50.725783 #6550] DEBUG -- : Read 1428 bytes (7027 total)
+D, [2014-07-10T10:54:50.734858 #6550] DEBUG -- : Read 1428 bytes (8455 total)
+D, [2014-07-10T10:54:50.794522 #6550] DEBUG -- : Read 1428 bytes (9883 total)
+D, [2014-07-10T10:54:51.289122 #6550] DEBUG -- : Read 1428 bytes (11311 total)
+D, [2014-07-10T10:54:51.375287 #6550] DEBUG -- : Read 1428 bytes (12739 total)
+D, [2014-07-10T10:54:51.379648 #6550] DEBUG -- : Read 1428 bytes (14167 total)
+D, [2014-07-10T10:54:51.446134 #6550] DEBUG -- : Read 1428 bytes (15595 total)
+D, [2014-07-10T10:54:52.549485 #6550] DEBUG -- : Read 12852 bytes (28447 total)
+D, [2014-07-10T10:54:53.007400 #6550] DEBUG -- : Read 1428 bytes (29875 total)
+D, [2014-07-10T10:54:53.078804 #6550] DEBUG -- : Read 1428 bytes (31303 total)
+D, [2014-07-10T10:54:53.140560 #6550] DEBUG -- : Read 947 bytes (32250 total)
+I, [2014-07-10T10:54:53.147453 #6550]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:54:53.147539 #6550] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:54:53.147583 #6550] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:54:53.147619 #6550] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:54:53.147653 #6550] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:54:53.147686 #6550] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:54:53.147719 #6550] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:54:53.521273 #6550]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:54:53.521385 #6550] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:54:53.521429 #6550] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:54:53.521465 #6550] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:54:53.521498 #6550] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:54:53.521530 #6550] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:54:53.521561 #6550] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:54:53.521592 #6550] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:54:53.521623 #6550] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:54:52 GMT
+D, [2014-07-10T10:54:53.521724 #6550] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:54:53.576728 #6550] DEBUG -- : Read 1428 bytes (1428 total)
+D, [2014-07-10T10:54:53.579451 #6550] DEBUG -- : Read 1428 bytes (2856 total)
+D, [2014-07-10T10:54:53.602804 #6550] DEBUG -- : Read 891 bytes (3747 total)
+D, [2014-07-10T10:54:53.618941 #6550] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:54:53.636400 #6550] DEBUG -- : Read 1428 bytes (5599 total)
+D, [2014-07-10T10:54:53.748611 #6550] DEBUG -- : Read 1428 bytes (7027 total)
+D, [2014-07-10T10:54:56.586928 #6550] DEBUG -- : Read 1428 bytes (8455 total)
+D, [2014-07-10T10:54:56.698524 #6550] DEBUG -- : Read 1428 bytes (9883 total)
+D, [2014-07-10T10:54:56.844318 #6550] DEBUG -- : Read 10056 bytes (19939 total)
+D, [2014-07-10T10:54:56.847428 #6550] DEBUG -- : Read 1428 bytes (21367 total)
+D, [2014-07-10T10:54:56.967619 #6550] DEBUG -- : Read 1428 bytes (22795 total)
+D, [2014-07-10T10:54:57.034800 #6550] DEBUG -- : Read 1428 bytes (24223 total)
+D, [2014-07-10T10:54:57.037248 #6550] DEBUG -- : Read 1428 bytes (25651 total)
+D, [2014-07-10T10:54:57.045295 #6550] DEBUG -- : Read 1428 bytes (27079 total)
+D, [2014-07-10T10:54:57.057805 #6550] DEBUG -- : Read 1428 bytes (28507 total)
+D, [2014-07-10T10:54:57.060439 #6550] DEBUG -- : Read 1428 bytes (29935 total)
+D, [2014-07-10T10:54:57.078874 #6550] DEBUG -- : Read 1428 bytes (31363 total)
+D, [2014-07-10T10:54:57.474633 #6550] DEBUG -- : Read 887 bytes (32250 total)
+I, [2014-07-10T10:54:57.487749 #6550]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/financial_transactions.html?type=number_search
+D, [2014-07-10T10:54:57.487831 #6550] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:54:57.487864 #6550] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:54:57.487888 #6550] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:54:57.487911 #6550] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:54:57.487933 #6550] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:54:57.487955 #6550] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:55:00.175002 #6550]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:55:00.175114 #6550] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:55:00.175159 #6550] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:55:00.175197 #6550] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:55:00.175234 #6550] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:55:00.175267 #6550] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:55:00.175299 #6550] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:55:00.175332 #6550] DEBUG -- : response-header: content-length => 26767
+D, [2014-07-10T10:55:00.175364 #6550] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:54:59 GMT
+D, [2014-07-10T10:55:00.175481 #6550] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:55:00.180796 #6550] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:55:00.183505 #6550] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:55:00.185350 #6550] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:55:00.191592 #6550] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:55:00.360924 #6550] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:55:00.372550 #6550] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:55:00.669620 #6550] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:55:00.734469 #6550] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:55:00.745148 #6550] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:55:00.892077 #6550] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:55:00.903775 #6550] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:55:00.925411 #6550] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:55:00.962792 #6550] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:55:00.971903 #6550] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:55:00.974746 #6550] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:55:01.002997 #6550] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:55:01.061259 #6550] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:55:01.063704 #6550] DEBUG -- : Read 1440 bytes (24331 total)
+D, [2014-07-10T10:55:01.322863 #6550] DEBUG -- : Read 1440 bytes (25771 total)
+D, [2014-07-10T10:55:01.325609 #6550] DEBUG -- : Read 996 bytes (26767 total)
+I, [2014-07-10T10:59:01.329227 #6562]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:59:01.329296 #6562] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:59:01.329327 #6562] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:59:01.329352 #6562] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:59:01.329376 #6562] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:59:01.329399 #6562] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:59:01.329421 #6562] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:59:01.622413 #6562]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:59:01.622528 #6562] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:59:01.622606 #6562] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:59:01.622649 #6562] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:59:01.622682 #6562] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:59:01.622714 #6562] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:59:01.622745 #6562] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:59:01.622775 #6562] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:59:01.622813 #6562] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:59:00 GMT
+D, [2014-07-10T10:59:01.622929 #6562] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:59:01.630873 #6562] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:59:01.645009 #6562] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:59:01.646228 #6562] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:59:01.646700 #6562] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:59:01.776802 #6562] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:59:01.779404 #6562] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:59:01.784108 #6562] DEBUG -- : Read 1440 bytes (8491 total)
+D, [2014-07-10T10:59:01.789651 #6562] DEBUG -- : Read 1440 bytes (9931 total)
+D, [2014-07-10T10:59:01.791674 #6562] DEBUG -- : Read 1440 bytes (11371 total)
+D, [2014-07-10T10:59:01.899656 #6562] DEBUG -- : Read 1440 bytes (12811 total)
+D, [2014-07-10T10:59:01.906228 #6562] DEBUG -- : Read 1440 bytes (14251 total)
+D, [2014-07-10T10:59:01.928827 #6562] DEBUG -- : Read 1440 bytes (15691 total)
+D, [2014-07-10T10:59:01.930633 #6562] DEBUG -- : Read 1440 bytes (17131 total)
+D, [2014-07-10T10:59:01.937967 #6562] DEBUG -- : Read 1440 bytes (18571 total)
+D, [2014-07-10T10:59:01.939828 #6562] DEBUG -- : Read 1440 bytes (20011 total)
+D, [2014-07-10T10:59:01.942014 #6562] DEBUG -- : Read 1440 bytes (21451 total)
+D, [2014-07-10T10:59:01.943744 #6562] DEBUG -- : Read 1440 bytes (22891 total)
+D, [2014-07-10T10:59:02.069023 #6562] DEBUG -- : Read 1440 bytes (24331 total)
+D, [2014-07-10T10:59:02.072027 #6562] DEBUG -- : Read 1440 bytes (25771 total)
+D, [2014-07-10T10:59:02.078025 #6562] DEBUG -- : Read 1440 bytes (27211 total)
+D, [2014-07-10T10:59:02.080734 #6562] DEBUG -- : Read 1440 bytes (28651 total)
+D, [2014-07-10T10:59:02.084133 #6562] DEBUG -- : Read 1440 bytes (30091 total)
+D, [2014-07-10T10:59:02.111291 #6562] DEBUG -- : Read 1440 bytes (31531 total)
+D, [2014-07-10T10:59:02.113548 #6562] DEBUG -- : Read 719 bytes (32250 total)
+I, [2014-07-10T10:59:02.119842 #6562]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/summary.html?type=number_search
+D, [2014-07-10T10:59:02.119902 #6562] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:59:02.119936 #6562] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:59:02.119964 #6562] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:59:02.119992 #6562] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:59:02.120018 #6562] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:59:02.120043 #6562] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:59:02.331540 #6562]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:59:02.331651 #6562] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:59:02.331694 #6562] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:59:02.331729 #6562] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:59:02.331762 #6562] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:59:02.331795 #6562] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:59:02.331825 #6562] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:59:02.331888 #6562] DEBUG -- : response-header: content-length => 32250
+D, [2014-07-10T10:59:02.331926 #6562] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:59:01 GMT
+D, [2014-07-10T10:59:02.332029 #6562] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:59:02.343870 #6562] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:59:02.349901 #6562] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:59:02.351669 #6562] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:59:02.352806 #6562] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:59:02.358485 #6562] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:59:02.361205 #6562] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:59:02.363207 #6562] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:59:02.364490 #6562] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:59:02.370697 #6562] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:59:02.373464 #6562] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:59:02.375639 #6562] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:59:02.376945 #6562] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:59:02.382459 #6562] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:59:02.385061 #6562] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:59:02.387387 #6562] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:59:02.388775 #6562] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:59:02.394140 #6562] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:59:02.428689 #6562] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:59:02.507694 #6562] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:59:02.568698 #6562] DEBUG -- : Read 1440 bytes (22599 total)
+D, [2014-07-10T10:59:02.574095 #6562] DEBUG -- : Read 1440 bytes (24039 total)
+D, [2014-07-10T10:59:02.576794 #6562] DEBUG -- : Read 1440 bytes (25479 total)
+D, [2014-07-10T10:59:02.579485 #6562] DEBUG -- : Read 1440 bytes (26919 total)
+D, [2014-07-10T10:59:02.585114 #6562] DEBUG -- : Read 1440 bytes (28359 total)
+D, [2014-07-10T10:59:02.781105 #6562] DEBUG -- : Read 1440 bytes (29799 total)
+D, [2014-07-10T10:59:02.805083 #6562] DEBUG -- : Read 1440 bytes (31239 total)
+D, [2014-07-10T10:59:02.806502 #6562] DEBUG -- : Read 1011 bytes (32250 total)
+I, [2014-07-10T10:59:02.815963 #6562]  INFO -- : Net::HTTP::Get: /opic-cipo/cpd/eng/patent/2682865/financial_transactions.html?type=number_search
+D, [2014-07-10T10:59:02.816006 #6562] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2014-07-10T10:59:02.816028 #6562] DEBUG -- : request-header: accept => */*
+D, [2014-07-10T10:59:02.816046 #6562] DEBUG -- : request-header: user-agent => Mechanize/2.7.3 Ruby/2.0.0p451 (http://github.com/sparklemotion/mechanize/)
+D, [2014-07-10T10:59:02.816063 #6562] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2014-07-10T10:59:02.816080 #6562] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2014-07-10T10:59:02.816097 #6562] DEBUG -- : request-header: host => brevets-patents.ic.gc.ca
+I, [2014-07-10T10:59:03.149736 #6562]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2014-07-10T10:59:03.149845 #6562] DEBUG -- : response-header: connection => Keep-Alive
+D, [2014-07-10T10:59:03.149889 #6562] DEBUG -- : response-header: proxy-connection => Keep-Alive
+D, [2014-07-10T10:59:03.149925 #6562] DEBUG -- : response-header: via => HTTP/1.1 cpdpd1 (IBM-PROXY-WTE)
+D, [2014-07-10T10:59:03.149959 #6562] DEBUG -- : response-header: x-powered-by => Servlet/3.0
+D, [2014-07-10T10:59:03.149992 #6562] DEBUG -- : response-header: content-type => text/html; charset=ISO-8859-1
+D, [2014-07-10T10:59:03.150023 #6562] DEBUG -- : response-header: content-language => en
+D, [2014-07-10T10:59:03.150054 #6562] DEBUG -- : response-header: content-length => 26767
+D, [2014-07-10T10:59:03.150086 #6562] DEBUG -- : response-header: date => Thu, 10 Jul 2014 09:59:02 GMT
+D, [2014-07-10T10:59:03.150209 #6562] DEBUG -- : Read 0 bytes (0 total)
+D, [2014-07-10T10:59:03.160531 #6562] DEBUG -- : Read 1440 bytes (1440 total)
+D, [2014-07-10T10:59:03.169955 #6562] DEBUG -- : Read 1440 bytes (2880 total)
+D, [2014-07-10T10:59:03.175590 #6562] DEBUG -- : Read 867 bytes (3747 total)
+D, [2014-07-10T10:59:03.178157 #6562] DEBUG -- : Read 424 bytes (4171 total)
+D, [2014-07-10T10:59:03.184015 #6562] DEBUG -- : Read 1440 bytes (5611 total)
+D, [2014-07-10T10:59:03.256610 #6562] DEBUG -- : Read 1440 bytes (7051 total)
+D, [2014-07-10T10:59:03.258936 #6562] DEBUG -- : Read 1040 bytes (8091 total)
+D, [2014-07-10T10:59:03.260277 #6562] DEBUG -- : Read 424 bytes (8515 total)
+D, [2014-07-10T10:59:03.262944 #6562] DEBUG -- : Read 1440 bytes (9955 total)
+D, [2014-07-10T10:59:03.265669 #6562] DEBUG -- : Read 1440 bytes (11395 total)
+D, [2014-07-10T10:59:03.270606 #6562] DEBUG -- : Read 1076 bytes (12471 total)
+D, [2014-07-10T10:59:03.271710 #6562] DEBUG -- : Read 424 bytes (12895 total)
+D, [2014-07-10T10:59:03.275654 #6562] DEBUG -- : Read 1440 bytes (14335 total)
+D, [2014-07-10T10:59:03.284482 #6562] DEBUG -- : Read 1440 bytes (15775 total)
+D, [2014-07-10T10:59:03.286561 #6562] DEBUG -- : Read 1040 bytes (16815 total)
+D, [2014-07-10T10:59:03.287811 #6562] DEBUG -- : Read 424 bytes (17239 total)
+D, [2014-07-10T10:59:03.291744 #6562] DEBUG -- : Read 1440 bytes (18679 total)
+D, [2014-07-10T10:59:03.294512 #6562] DEBUG -- : Read 1440 bytes (20119 total)
+D, [2014-07-10T10:59:03.296553 #6562] DEBUG -- : Read 1040 bytes (21159 total)
+D, [2014-07-10T10:59:03.302085 #6562] DEBUG -- : Read 424 bytes (21583 total)
+D, [2014-07-10T10:59:03.305355 #6562] DEBUG -- : Read 1440 bytes (23023 total)
+D, [2014-07-10T10:59:03.308035 #6562] DEBUG -- : Read 1440 bytes (24463 total)
+D, [2014-07-10T10:59:03.310197 #6562] DEBUG -- : Read 1076 bytes (25539 total)
+D, [2014-07-10T10:59:03.311423 #6562] DEBUG -- : Read 424 bytes (25963 total)
+D, [2014-07-10T10:59:03.329568 #6562] DEBUG -- : Read 804 bytes (26767 total)

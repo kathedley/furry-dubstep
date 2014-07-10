@@ -645,17 +645,21 @@ if #CANADA if2
     
     else
     patent_title_page_url = ""
-    patent_title_page_url = ""
+    patent_renewal_page_url = ""
 end #ends CANADA if2
 
 # First, check if it's a valid page
 
-http_status_code = Net::HTTP.get_response(URI.parse(patent_title_page_url)).code
-logger.info "HTTP Status Code: " + http_status_code + "\n"
+#http_status_code = Net::HTTP.get_response(URI.parse(patent_title_page_url)).code
+#logger.info "HTTP Status Code: " + http_status_code + "\n"
 
+patent_title_page = agent.get(patent_title_page_url)
+http_status_code = patent_title_page.code
 
-if #CANADA if3
-http_status_code.match(/20\d/)
+if #CANADA if3.1
+    http_status_code.match(/20\d/)
+    logger.info "Title Page HTTP Status Code: " + http_status_code + "\n"
+    
     
     #patent_title_page = Nokogiri::HTML(open(patent_title_page_url))
     
@@ -722,57 +726,67 @@ http_status_code.match(/20\d/)
             status = "Application in Progress"
             logger.info "Status unless changed later: " + status + "\n"
         end
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Reissued')]]")[0] != nil
-            status = "Reissued"
-            logger.info "Status unless changed later: " + status + "\n"
-        end
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Dead Application')]]")[0] != nil
-            status = "Application Dead"
-            logger.info "Status unless changed later: " + status + "\n"
-        end
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Withdrawn Application')]]")[0] != nil
-            status = "Application Withdrawn"
-            logger.info "Status unless changed later: " + status + "\n"
-        end
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Surrendered')]]")[0] != nil
-            status = "Surrendered"
-            logger.info "Status unless changed later: " + status + "\n"
-        end
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Lapsed')]]")[0] != nil
-            status = "Lapsed"
-            logger.info "Status unless changed later: " + status + "\n"
-        end
-        if  patent_title_page.parser.xpath("//th[a[contains(text(), 'Expired')]]")[0] != nil
-            status = "Expired"
-            logger.info "Status unless changed later: " + status + "\n"
-        end
-
+        
         # Next open renewal page
         patent_renewal_page = agent.get(patent_renewal_page_url)
         
-        if  #CANADA if4.2
-            patent_renewal_page.parser.xpath("html/body/div/div/div[6]/div[2]/h2/text()") == "Patent Not Found"
-            
-            logger.info "Error message returned!\n"
-            error_message = "No renewal page for patent found under that number."
-            logger.info "Message: " + error_message + "\n"
-            
-            else #related to CANADA if4.2
-            # No error message, continue to look for data
-            logger.info "Renewal data returned!\n"
+        renewal_http_status_code = patent_renewal_page.code
+        
+        if #CANADA if3.2
+            renewal_http_status_code.match(/20\d/)
+            logger.info "Renewal Page HTTP Status Code: " + renewal_http_status_code + "\n"
 
-                if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Last Payment')]]")[0] != nil
-                    last_renewal_date = patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Last Payment')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
-
-                    logger.info "Last Renewal Date: " + last_renewal_date + "\n"
-                end
-                if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Next Payment')]]")[0] != nil
-                    next_renewal_date = patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Next Payment')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
-
-                    logger.info "Next Renewal Date: " + next_renewal_date + "\n"
-                end
+        
+            if  #CANADA if4.2
+                patent_renewal_page.parser.xpath("html/body/div/div/div[6]/div[2]/h2/text()") == "Patent Not Found"
                 
-        end #ends CANADA if4.2
+                logger.info "Error message returned!\n"
+                error_message = "No renewal page for patent found under that number."
+                logger.info "Message: " + error_message + "\n"
+                
+                else #related to CANADA if4.2
+                # No error message, continue to look for data
+                logger.info "Renewal data returned!\n"
+
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Last Payment')]]")[0] != nil
+                        last_renewal_date = patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Last Payment')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
+                        logger.info "Last Renewal Date: " + last_renewal_date + "\n"
+                    end
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Next Payment')]]")[0] != nil
+                        next_renewal_date = patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Next Payment')]]/following-sibling::*")[0].content.match(/\d\d\d\d-\d\d-\d\d/).to_s
+                        logger.info "Next Renewal Date: " + next_renewal_date + "\n"
+                    end
+                    
+                    # Set up status
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Reissued')]]")[0] != nil
+                        status = "Reissued"
+                        logger.info "Status unless changed later: " + status + "\n"
+                    end
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Dead Application')]]")[0] != nil
+                        status = "Application Dead"
+                        logger.info "Status unless changed later: " + status + "\n"
+                    end
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Withdrawn Application')]]")[0] != nil
+                        status = "Application Withdrawn"
+                        logger.info "Status unless changed later: " + status + "\n"
+                    end
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Surrendered')]]")[0] != nil
+                        status = "Surrendered"
+                        logger.info "Status unless changed later: " + status + "\n"
+                    end
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Lapsed')]]")[0] != nil
+                        status = "Lapsed"
+                        logger.info "Status unless changed later: " + status + "\n"
+                    end
+                    if  patent_renewal_page.parser.xpath("//td[a[contains(text(), 'Expired')]]")[0] != nil
+                        status = "Expired"
+                        logger.info "Status unless changed later: " + status + "\n"
+                    end
+
+                    
+            end #ends CANADA if4.2
+        
+        end #ends CANADA if3.2
         
     end #ends CANADA if4.1
     
